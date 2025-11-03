@@ -1,11 +1,11 @@
+
+
 # MaterialX Protobuf Converter
+[![Build Status](https://github.com/kwokcb/materialxpb/actions/workflows/main.yml/badge.svg)](https://github.com/kwokcb/materialxpb/actions/workflows/main.yml)
 
 A sample Python utility for converting MaterialX documents to and from Protocol Buffer format.
 
-```mermaid
-graph LR
-    A[<img src='https://artwork.aswf.io/projects/materialx/stacked/color/materialx-stacked-color.svg' width='100'/>] <--> B[<img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png' width='100'/>]
-```
+<img src="./documents/images/flow.svg" alt="Interop diagram" width="100%"/>
 
 ## What is Protocol Buffers?
 
