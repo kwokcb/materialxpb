@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <surface_unlit name="Default_Unlit" type="surfaceshader">
+    <input name="emission" value="1" type="float" />
+    <input name="emission_color" type="color3" nodegraph="cross_graph" />
+    <input name="transmission" value="0" type="float" />
+    <input name="transmission_color" value="1,1,1" type="color3" />
+    <input name="opacity" value="1" type="float" />
+  </surface_unlit>
+  <surfacematerial name="Default" type="material">
+    <input name="surfaceshader" nodename="Default_Unlit" type="surfaceshader" />
+    <input name="backsurfaceshader" value="" type="surfaceshader" />
+    <input name="displacementshader" value="" type="displacementshader" />
+  </surfacematerial>
+  <nodegraph name="cross_graph">
+    <output name="out" nodename="convert_color4" type="color3" />
+    <convert name="convert_color4" type="color3">
+      <input name="in" nodename="max_float1" type="float" />
+    </convert>
+    <max name="max_float1" type="float">
+      <input name="in1" nodename="horizontal" type="float" />
+      <input name="in2" nodename="vertical" type="float" />
+    </max>
+    <input name="repeat" value="1,1" type="vector2" />
+    <input name="scale" value="0.2,0.2" type="vector2" />
+    <texcoord name="texcoord_vector3" type="vector2">
+      <input name="index" value="0" type="integer" />
+    </texcoord>
+    <place2d name="place2d_vector3" type="vector2">
+      <input name="texcoord" nodename="texcoord_vector3" type="vector2" />
+      <input name="pivot" value="0.5,0.5" type="vector2" />
+      <input name="scale" interfacename="scale" type="vector2" />
+      <input name="rotate" unittype="angle" interfacename="rotation" type="float" unit="degree" />
+      <input name="offset" value="0,0" type="vector2" />
+      <input name="operationorder" value="0" type="integer" />
+    </place2d>
+    <line name="vertical" type="float">
+      <input name="texcoord" nodename="modulo_vector3" type="vector2" />
+      <input name="center" value="0.5,0" type="vector2" />
+      <input name="radius" interfacename="radius" type="float" />
+      <input name="point1" value="0,0" type="vector2" />
+      <input name="point2" value="0,1" type="vector2" />
+    </line>
+    <modulo name="modulo_vector3" type="vector2">
+      <input name="in1" nodename="place2d_vector3" type="vector2" />
+      <input name="in2" interfacename="repeat" type="vector2" />
+    </modulo>
+    <line name="horizontal" type="float">
+      <input name="texcoord" nodename="modulo_vector3" type="vector2" />
+      <input name="center" value="0,0.5" type="vector2" />
+      <input name="radius" interfacename="radius" type="float" />
+      <input name="point1" value="0,0" type="vector2" />
+      <input name="point2" value="1,0" type="vector2" />
+    </line>
+    <input name="radius" value="0.03" type="float" />
+    <input name="rotation" value="45" type="float" />
+  </nodegraph>
+</materialx>

@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+source/main.py
+source/materialx_pb2.py
+source/materialx_serializer.py
+source/materialxpb.egg-info/PKG-INFO
+source/materialxpb.egg-info/SOURCES.txt
+source/materialxpb.egg-info/dependency_links.txt
+source/materialxpb.egg-info/entry_points.txt
+source/materialxpb.egg-info/requires.txt
+source/materialxpb.egg-info/top_level.txt
+tests/test_materialx.py

@@ -1,0 +1,5673 @@
+{
+  "schema_version": {
+    "major": 1,
+    "minor": 39,
+    "patch": 4
+  },
+  "attributes": [
+    {
+      "key": "version",
+      "value": "1.39"
+    },
+    {
+      "key": "colorspace",
+      "value": "lin_rec709"
+    }
+  ],
+  "elements": [
+    {
+      "name": "NG_BishopBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse2",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_black_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic2",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness2",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_black_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal2",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_black_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap4",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal2"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse2"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic2"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness2"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap4"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bishop_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopBlack"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopBlack"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopBlack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Bishop_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Bishop_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_BishopWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse3",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_white_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic3",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness3",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_white_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal3",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/bishop_white_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap5",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal3"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse3"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic3"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness3"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap5"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bishop_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopWhite"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopWhite"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_BishopWhite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Bishop_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Bishop_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_CastleBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse6",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_black_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic6",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness6",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_shared_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal6",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_shared_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap8",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal6"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse6"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic6"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness6"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap8"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Castle_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleBlack"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleBlack"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleBlack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Castle_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Castle_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_CastleWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse7",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_white_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic7",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness7",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_shared_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal7",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/castle_shared_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap9",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal7"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse7"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic7"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness7"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap9"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Castle_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleWhite"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleWhite"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_CastleWhite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Castle_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Castle_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_ChessBoard",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "mtlximage13",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/chessboard_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage16",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/chessboard_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage17",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/chessboard_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage15",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/chessboard_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap12",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "mtlximage15"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage13"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage16"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage17"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap12"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chessboard",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_ChessBoard"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_ChessBoard"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_ChessBoard"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_ChessBoard"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_ChessBoard"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_ChessBoard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Chessboard",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Chessboard"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_KingBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "mtlximage1",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_black_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage2",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage4",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_black_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage3",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_shared_scattering.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage6",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_black_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap1",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "mtlximage6"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage2"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage4"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage3"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap1"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "King_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "subsurface_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingBlack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_King_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "King_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_KingWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "mtlximage7",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_white_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage10",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage11",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_white_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage8",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_shared_scattering.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage9",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/king_white_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap11",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "mtlximage9"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage7"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage10"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage11"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage8"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap11"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "King_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "subsurface_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KingWhite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_King_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "King_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_KnightBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse4",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/knight_black_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness4",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/knight_black_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal4",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/knight_black_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap6",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal4"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse4"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness4"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap6"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Knight_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightBlack"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightBlack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Knight_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Knight_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_KnightWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse5",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/knight_white_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness5",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/knight_white_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal5",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/knight_white_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap7",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal5"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse5"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness5"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap7"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Knight_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightWhite"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_KnightWhite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Knight_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Knight_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_PawnBodyBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse9",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_black_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic9",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness9",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal9",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap13",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal9"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse9"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic9"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness9"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap13"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawn_Body_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyBlack"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyBlack"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyBlack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Pawn_Body_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Pawn_Body_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_PawnBodyWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse8",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_white_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic8",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness8",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal8",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap10",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal8"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse8"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic8"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness8"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap10"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawn_Body_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyWhite"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyWhite"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnBodyWhite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Pawn_Body_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Pawn_Body_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_PawnTopBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "mtlximage19",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage18",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap14",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "mtlximage18"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage19"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap14"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawn_Top_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnTopBlack"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnTopBlack"
+            }
+          ]
+        },
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "transmission",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "transmission_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.2995, 0.5, 0.450276"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Pawn_Top_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Pawn_Top_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_PawnTopWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "mtlximage21",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlximage20",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/pawn_shared_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap15",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "mtlximage20"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlximage21"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap15"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pawn_Top_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnTopWhite"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_PawnTopWhite"
+            }
+          ]
+        },
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "transmission",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "transmission_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 0.828"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1, 1, 1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Pawn_Top_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Pawn_Top_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_QueenBlack",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_black_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_black_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "sss",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_shared_scattering.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_black_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap2",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "sss"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap2"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Queen_B",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "subsurface_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.003"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenBlack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Queen_B",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Queen_B"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NG_QueenWhite",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "diffuse1",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_white_base_color.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                },
+                {
+                  "key": "colorspace",
+                  "value": "srgb_texture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "metallic1",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_shared_metallic.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "roughness1",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_white_roughness.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "sss1",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_shared_scattering.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "normal1",
+          "type": "image",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "file",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "chess_set/queen_white_normal.jpg"
+                },
+                {
+                  "key": "type",
+                  "value": "filename"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mtlxnormalmap3",
+          "type": "normalmap",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "normal1"
+                },
+                {
+                  "key": "type",
+                  "value": "vector3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "base_color_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "diffuse1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "metalness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "metallic1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "roughness_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "roughness1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "sss1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal_output",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "mtlxnormalmap3"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Queen_W",
+      "type": "standard_surface",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "base_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        },
+        {
+          "name": "metalness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "metalness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        },
+        {
+          "name": "specular_roughness",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "roughness_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "subsurface_output"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "base_color_output"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        },
+        {
+          "name": "subsurface_scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.001"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "output",
+              "value": "normal_output"
+            },
+            {
+              "key": "type",
+              "value": "vector3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "NG_QueenWhite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "M_Queen_W",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Queen_W"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L_ChessSet",
+      "type": "look",
+      "children": [
+        {
+          "name": "Chessboard",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Chessboard"
+            },
+            {
+              "key": "material",
+              "value": "M_Chessboard"
+            }
+          ]
+        },
+        {
+          "name": "Bishop_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Bishop_B"
+            },
+            {
+              "key": "material",
+              "value": "M_Bishop_B"
+            }
+          ]
+        },
+        {
+          "name": "Bishop_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Bishop_W"
+            },
+            {
+              "key": "material",
+              "value": "M_Bishop_W"
+            }
+          ]
+        },
+        {
+          "name": "Castle_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Castle_B"
+            },
+            {
+              "key": "material",
+              "value": "M_Castle_B"
+            }
+          ]
+        },
+        {
+          "name": "Castle_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Castle_W"
+            },
+            {
+              "key": "material",
+              "value": "M_Castle_W"
+            }
+          ]
+        },
+        {
+          "name": "Knight_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Knight_B"
+            },
+            {
+              "key": "material",
+              "value": "M_Knight_B"
+            }
+          ]
+        },
+        {
+          "name": "Knight_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Knight_W"
+            },
+            {
+              "key": "material",
+              "value": "M_Knight_W"
+            }
+          ]
+        },
+        {
+          "name": "King_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "King_B"
+            },
+            {
+              "key": "material",
+              "value": "M_King_B"
+            }
+          ]
+        },
+        {
+          "name": "King_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "King_W"
+            },
+            {
+              "key": "material",
+              "value": "M_King_W"
+            }
+          ]
+        },
+        {
+          "name": "Pawn_Body_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Pawn_Body_B"
+            },
+            {
+              "key": "material",
+              "value": "M_Pawn_Body_B"
+            }
+          ]
+        },
+        {
+          "name": "Pawn_Top_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Pawn_Top_B"
+            },
+            {
+              "key": "material",
+              "value": "M_Pawn_Top_B"
+            }
+          ]
+        },
+        {
+          "name": "Pawn_Body_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Pawn_Body_W"
+            },
+            {
+              "key": "material",
+              "value": "M_Pawn_Body_W"
+            }
+          ]
+        },
+        {
+          "name": "Pawn_Top_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Pawn_Top_W"
+            },
+            {
+              "key": "material",
+              "value": "M_Pawn_Top_W"
+            }
+          ]
+        },
+        {
+          "name": "Queen_B",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Queen_B"
+            },
+            {
+              "key": "material",
+              "value": "M_Queen_B"
+            }
+          ]
+        },
+        {
+          "name": "Queen_W",
+          "type": "materialassign",
+          "attributes": [
+            {
+              "key": "geom",
+              "value": "Queen_W"
+            },
+            {
+              "key": "material",
+              "value": "M_Queen_W"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+// materialx.proto
+//
+// Setup for Windows:
+// ------------------
+// pip install --only-binary=all protobuf
+// choco install protoc
+// protoc --python_out=. materialx.proto
+//
+// Setup for Mac:
+// brew install protobuf
+// pip install --only-binary=all protobuf
+// protoc --python_out=. materialx.proto
+//
+syntax = "proto3";
+
+// Version information for the protobuf schema
+message Version {
+  uint32 major = 1;  // Incompatible API changes
+  uint32 minor = 2;  // Backwards-compatible functionality additions
+  uint32 patch = 3;  // Backwards-compatible bug fixes
+}
+
+message Attribute {
+  string key = 1;
+  string value = 2;
+}
+
+message MaterialXElement {
+  string name = 1;
+  string type = 2;
+  repeated Attribute attributes = 3;
+  repeated MaterialXElement children = 4;
+  
+  // Reserved field numbers for future use
+  // If you need to deprecate a field, mark it reserved
+  // reserved 5, 6;
+  // reserved "deprecated_field_name";
+}
+
+message MaterialXDocument {
+  // Version of the schema used to create this document
+  Version schema_version = 1;
+  
+  repeated Attribute attributes = 2;
+  repeated MaterialXElement elements = 3;
+  
+  // Reserved field numbers for future use
+  // reserved 4, 5;
+}

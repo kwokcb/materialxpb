@@ -1,0 +1,629 @@
+{
+  "schema_version": {
+    "major": 1,
+    "minor": 39,
+    "patch": 4
+  },
+  "attributes": [
+    {
+      "key": "version",
+      "value": "1.39"
+    },
+    {
+      "key": "colorspace",
+      "value": "lin_rec709"
+    }
+  ],
+  "elements": [
+    {
+      "name": "Default_Unlit",
+      "type": "surface_unlit",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "surfaceshader"
+        }
+      ],
+      "children": [
+        {
+          "name": "emission",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "emission_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            },
+            {
+              "key": "nodegraph",
+              "value": "cross_graph"
+            }
+          ]
+        },
+        {
+          "name": "transmission",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "transmission_color",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1,1,1"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "opacity",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default",
+      "type": "surfacematerial",
+      "attributes": [
+        {
+          "key": "type",
+          "value": "material"
+        }
+      ],
+      "children": [
+        {
+          "name": "surfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "Default_Unlit"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        },
+        {
+          "name": "backsurfaceshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value"
+            },
+            {
+              "key": "type",
+              "value": "surfaceshader"
+            }
+          ]
+        },
+        {
+          "name": "displacementshader",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value"
+            },
+            {
+              "key": "type",
+              "value": "displacementshader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cross_graph",
+      "type": "nodegraph",
+      "children": [
+        {
+          "name": "out",
+          "type": "output",
+          "attributes": [
+            {
+              "key": "nodename",
+              "value": "convert_color4"
+            },
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ]
+        },
+        {
+          "name": "convert_color4",
+          "type": "convert",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "color3"
+            }
+          ],
+          "children": [
+            {
+              "name": "in",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "max_float1"
+                },
+                {
+                  "key": "type",
+                  "value": "float"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "max_float1",
+          "type": "max",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "in1",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "horizontal"
+                },
+                {
+                  "key": "type",
+                  "value": "float"
+                }
+              ]
+            },
+            {
+              "name": "in2",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "vertical"
+                },
+                {
+                  "key": "type",
+                  "value": "float"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "repeat",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "1,1"
+            },
+            {
+              "key": "type",
+              "value": "vector2"
+            }
+          ]
+        },
+        {
+          "name": "scale",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.2,0.2"
+            },
+            {
+              "key": "type",
+              "value": "vector2"
+            }
+          ]
+        },
+        {
+          "name": "texcoord_vector3",
+          "type": "texcoord",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector2"
+            }
+          ],
+          "children": [
+            {
+              "name": "index",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0"
+                },
+                {
+                  "key": "type",
+                  "value": "integer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "place2d_vector3",
+          "type": "place2d",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector2"
+            }
+          ],
+          "children": [
+            {
+              "name": "texcoord",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "texcoord_vector3"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "pivot",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0.5,0.5"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "scale",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "interfacename",
+                  "value": "scale"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "rotate",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "unittype",
+                  "value": "angle"
+                },
+                {
+                  "key": "interfacename",
+                  "value": "rotation"
+                },
+                {
+                  "key": "type",
+                  "value": "float"
+                },
+                {
+                  "key": "unit",
+                  "value": "degree"
+                }
+              ]
+            },
+            {
+              "name": "offset",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0,0"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "operationorder",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0"
+                },
+                {
+                  "key": "type",
+                  "value": "integer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "vertical",
+          "type": "line",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "texcoord",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "modulo_vector3"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "center",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0.5,0"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "radius",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "interfacename",
+                  "value": "radius"
+                },
+                {
+                  "key": "type",
+                  "value": "float"
+                }
+              ]
+            },
+            {
+              "name": "point1",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0,0"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "point2",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0,1"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "modulo_vector3",
+          "type": "modulo",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "vector2"
+            }
+          ],
+          "children": [
+            {
+              "name": "in1",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "place2d_vector3"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "in2",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "interfacename",
+                  "value": "repeat"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "horizontal",
+          "type": "line",
+          "attributes": [
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ],
+          "children": [
+            {
+              "name": "texcoord",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "nodename",
+                  "value": "modulo_vector3"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "center",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0,0.5"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "radius",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "interfacename",
+                  "value": "radius"
+                },
+                {
+                  "key": "type",
+                  "value": "float"
+                }
+              ]
+            },
+            {
+              "name": "point1",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "0,0"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            },
+            {
+              "name": "point2",
+              "type": "input",
+              "attributes": [
+                {
+                  "key": "value",
+                  "value": "1,0"
+                },
+                {
+                  "key": "type",
+                  "value": "vector2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "radius",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "0.03"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        },
+        {
+          "name": "rotation",
+          "type": "input",
+          "attributes": [
+            {
+              "key": "value",
+              "value": "45"
+            },
+            {
+              "key": "type",
+              "value": "float"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

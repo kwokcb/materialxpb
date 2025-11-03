@@ -1,0 +1,1283 @@
+
+'
+version1.39
+
+colorspace
+lin_rec709Ú
+NG_BishopBlack	nodegraph"é
+diffuse2image
+typecolor3"k
+fileinput.
+value%chess_set/bishop_black_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"q
+	metallic2image
+typefloat"N
+fileinput-
+value$chess_set/bishop_shared_metallic.jpg
+typefilename"r
+
+roughness2image
+typefloat"N
+fileinput-
+value$chess_set/bishop_black_roughness.jpg
+typefilename"n
+normal2image
+typevector3"K
+fileinput*
+value!chess_set/bishop_black_normal.jpg
+typefilename"_
+mtlxnormalmap4	normalmap
+typevector3"1
+ininput
+nodenamenormal2
+typevector3"A
+base_color_outputoutput
+nodenamediffuse2
+typecolor3"@
+metalness_outputoutput
+nodename	metallic2
+typefloat"A
+roughness_outputoutput
+nodename
+roughness2
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap4
+typevector3‡
+Bishop_Bstandard_surface
+typesurfaceshader"]
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_BishopBlack"Z
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_BishopBlack"c
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_BishopBlack".
+
+subsurfaceinput
+
+value0
+typefloat"c
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_BishopBlack"d
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_BishopBlack"8
+subsurface_scaleinput
+value0.003
+typefloat"V
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_BishopBlackt
+
+M_Bishop_Bsurfacematerial
+typematerial"C
+surfaceshaderinput
+nodenameBishop_B
+typesurfaceshaderÚ
+NG_BishopWhite	nodegraph"é
+diffuse3image
+typecolor3"k
+fileinput.
+value%chess_set/bishop_white_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"q
+	metallic3image
+typefloat"N
+fileinput-
+value$chess_set/bishop_shared_metallic.jpg
+typefilename"r
+
+roughness3image
+typefloat"N
+fileinput-
+value$chess_set/bishop_white_roughness.jpg
+typefilename"n
+normal3image
+typevector3"K
+fileinput*
+value!chess_set/bishop_white_normal.jpg
+typefilename"_
+mtlxnormalmap5	normalmap
+typevector3"1
+ininput
+nodenamenormal3
+typevector3"A
+base_color_outputoutput
+nodenamediffuse3
+typecolor3"@
+metalness_outputoutput
+nodename	metallic3
+typefloat"A
+roughness_outputoutput
+nodename
+roughness3
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap5
+typevector3‡
+Bishop_Wstandard_surface
+typesurfaceshader"]
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_BishopWhite"Z
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_BishopWhite"c
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_BishopWhite".
+
+subsurfaceinput
+
+value0
+typefloat"c
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_BishopWhite"d
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_BishopWhite"8
+subsurface_scaleinput
+value0.003
+typefloat"V
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_BishopWhitet
+
+M_Bishop_Wsurfacematerial
+typematerial"C
+surfaceshaderinput
+nodenameBishop_W
+typesurfaceshaderÙ
+NG_CastleBlack	nodegraph"é
+diffuse6image
+typecolor3"k
+fileinput.
+value%chess_set/castle_black_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"q
+	metallic6image
+typefloat"N
+fileinput-
+value$chess_set/castle_shared_metallic.jpg
+typefilename"s
+
+roughness6image
+typefloat"O
+fileinput.
+value%chess_set/castle_shared_roughness.jpg
+typefilename"o
+normal6image
+typevector3"L
+fileinput+
+value"chess_set/castle_shared_normal.jpg
+typefilename"_
+mtlxnormalmap8	normalmap
+typevector3"1
+ininput
+nodenamenormal6
+typevector3"A
+base_color_outputoutput
+nodenamediffuse6
+typecolor3"@
+metalness_outputoutput
+nodename	metallic6
+typefloat"A
+roughness_outputoutput
+nodename
+roughness6
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap8
+typevector3‡
+Castle_Bstandard_surface
+typesurfaceshader"]
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_CastleBlack"Z
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_CastleBlack"c
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_CastleBlack".
+
+subsurfaceinput
+
+value0
+typefloat"c
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_CastleBlack"d
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_CastleBlack"8
+subsurface_scaleinput
+value0.003
+typefloat"V
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_CastleBlackt
+
+M_Castle_Bsurfacematerial
+typematerial"C
+surfaceshaderinput
+nodenameCastle_B
+typesurfaceshaderÙ
+NG_CastleWhite	nodegraph"é
+diffuse7image
+typecolor3"k
+fileinput.
+value%chess_set/castle_white_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"q
+	metallic7image
+typefloat"N
+fileinput-
+value$chess_set/castle_shared_metallic.jpg
+typefilename"s
+
+roughness7image
+typefloat"O
+fileinput.
+value%chess_set/castle_shared_roughness.jpg
+typefilename"o
+normal7image
+typevector3"L
+fileinput+
+value"chess_set/castle_shared_normal.jpg
+typefilename"_
+mtlxnormalmap9	normalmap
+typevector3"1
+ininput
+nodenamenormal7
+typevector3"A
+base_color_outputoutput
+nodenamediffuse7
+typecolor3"@
+metalness_outputoutput
+nodename	metallic7
+typefloat"A
+roughness_outputoutput
+nodename
+roughness7
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap9
+typevector3‡
+Castle_Wstandard_surface
+typesurfaceshader"]
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_CastleWhite"Z
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_CastleWhite"c
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_CastleWhite".
+
+subsurfaceinput
+
+value0
+typefloat"c
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_CastleWhite"d
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_CastleWhite"8
+subsurface_scaleinput
+value0.003
+typefloat"V
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_CastleWhitet
+
+M_Castle_Wsurfacematerial
+typematerial"C
+surfaceshaderinput
+nodenameCastle_W
+typesurfaceshader˛
+NG_ChessBoard	nodegraph"è
+mtlximage13image
+typecolor3"i
+fileinput,
+value#chess_set/chessboard_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"p
+mtlximage16image
+typefloat"K
+fileinput*
+value!chess_set/chessboard_metallic.jpg
+typefilename"q
+mtlximage17image
+typefloat"L
+fileinput+
+value"chess_set/chessboard_roughness.jpg
+typefilename"p
+mtlximage15image
+typevector3"I
+fileinput(
+valuechess_set/chessboard_normal.jpg
+typefilename"d
+mtlxnormalmap12	normalmap
+typevector3"5
+ininput
+nodenamemtlximage15
+typevector3"D
+base_color_outputoutput
+nodenamemtlximage13
+typecolor3"B
+metalness_outputoutput
+nodenamemtlximage16
+typefloat"B
+roughness_outputoutput
+nodenamemtlximage17
+typefloat"E
+normal_outputoutput
+nodenamemtlxnormalmap12
+typevector3‹
+
+Chessboardstandard_surface
+typesurfaceshader"\
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_ChessBoard"Y
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_ChessBoard"b
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_ChessBoard".
+
+subsurfaceinput
+
+value0
+typefloat"b
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_ChessBoard"c
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_ChessBoard"8
+subsurface_scaleinput
+value0.003
+typefloat"U
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_ChessBoardx
+M_Chessboardsurfacematerial
+typematerial"E
+surfaceshaderinput
+nodename
+Chessboard
+typesurfaceshader¨
+NG_KingBlack	nodegraph"é
+
+mtlximage1image
+typecolor3"i
+fileinput,
+value#chess_set/king_black_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"p
+
+mtlximage2image
+typefloat"L
+fileinput+
+value"chess_set/king_shared_metallic.jpg
+typefilename"p
+
+mtlximage4image
+typefloat"L
+fileinput+
+value"chess_set/king_black_roughness.jpg
+typefilename"r
+
+mtlximage3image
+typefloat"N
+fileinput-
+value$chess_set/king_shared_scattering.jpg
+typefilename"o
+
+mtlximage6image
+typevector3"I
+fileinput(
+valuechess_set/king_black_normal.jpg
+typefilename"b
+mtlxnormalmap1	normalmap
+typevector3"4
+ininput
+nodename
+mtlximage6
+typevector3"C
+base_color_outputoutput
+nodename
+mtlximage1
+typecolor3"A
+metalness_outputoutput
+nodename
+mtlximage2
+typefloat"A
+roughness_outputoutput
+nodename
+mtlximage4
+typefloat"B
+subsurface_outputoutput
+nodename
+mtlximage3
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap1
+typevector3˛
+King_Bstandard_surface
+typesurfaceshader"[
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KingBlack"X
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_KingBlack"a
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_KingBlack"Z
+
+subsurfaceinput
+outputsubsurface_output
+typefloat
+	nodegraphNG_KingBlack"a
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KingBlack"b
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KingBlack"8
+subsurface_scaleinput
+value0.003
+typefloat"T
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_KingBlackp
+M_King_Bsurfacematerial
+typematerial"A
+surfaceshaderinput
+nodenameKing_B
+typesurfaceshader≤
+NG_KingWhite	nodegraph"é
+
+mtlximage7image
+typecolor3"i
+fileinput,
+value#chess_set/king_white_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"q
+mtlximage10image
+typefloat"L
+fileinput+
+value"chess_set/king_shared_metallic.jpg
+typefilename"q
+mtlximage11image
+typefloat"L
+fileinput+
+value"chess_set/king_white_roughness.jpg
+typefilename"r
+
+mtlximage8image
+typefloat"N
+fileinput-
+value$chess_set/king_shared_scattering.jpg
+typefilename"o
+
+mtlximage9image
+typevector3"I
+fileinput(
+valuechess_set/king_white_normal.jpg
+typefilename"c
+mtlxnormalmap11	normalmap
+typevector3"4
+ininput
+nodename
+mtlximage9
+typevector3"C
+base_color_outputoutput
+nodename
+mtlximage7
+typecolor3"B
+metalness_outputoutput
+nodenamemtlximage10
+typefloat"B
+roughness_outputoutput
+nodenamemtlximage11
+typefloat"B
+subsurface_outputoutput
+nodename
+mtlximage8
+typefloat"E
+normal_outputoutput
+nodenamemtlxnormalmap11
+typevector3˛
+King_Wstandard_surface
+typesurfaceshader"[
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KingWhite"X
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_KingWhite"a
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_KingWhite"Z
+
+subsurfaceinput
+outputsubsurface_output
+typefloat
+	nodegraphNG_KingWhite"a
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KingWhite"b
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KingWhite"8
+subsurface_scaleinput
+value0.003
+typefloat"T
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_KingWhitep
+M_King_Wsurfacematerial
+typematerial"A
+surfaceshaderinput
+nodenameKing_W
+typesurfaceshaderΩ
+NG_KnightBlack	nodegraph"é
+diffuse4image
+typecolor3"k
+fileinput.
+value%chess_set/knight_black_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"r
+
+roughness4image
+typefloat"N
+fileinput-
+value$chess_set/knight_black_roughness.jpg
+typefilename"n
+normal4image
+typevector3"K
+fileinput*
+value!chess_set/knight_black_normal.jpg
+typefilename"_
+mtlxnormalmap6	normalmap
+typevector3"1
+ininput
+nodenamenormal4
+typevector3"A
+base_color_outputoutput
+nodenamediffuse4
+typecolor3"A
+roughness_outputoutput
+nodename
+roughness4
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap6
+typevector3Ñ
+Knight_Bstandard_surface
+typesurfaceshader"]
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KnightBlack"c
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_KnightBlack".
+
+subsurfaceinput
+
+value0
+typefloat"c
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KnightBlack"d
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KnightBlack"8
+subsurface_scaleinput
+value0.003
+typefloat"V
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_KnightBlackt
+
+M_Knight_Bsurfacematerial
+typematerial"C
+surfaceshaderinput
+nodenameKnight_B
+typesurfaceshaderΩ
+NG_KnightWhite	nodegraph"é
+diffuse5image
+typecolor3"k
+fileinput.
+value%chess_set/knight_white_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"r
+
+roughness5image
+typefloat"N
+fileinput-
+value$chess_set/knight_white_roughness.jpg
+typefilename"n
+normal5image
+typevector3"K
+fileinput*
+value!chess_set/knight_white_normal.jpg
+typefilename"_
+mtlxnormalmap7	normalmap
+typevector3"1
+ininput
+nodenamenormal5
+typevector3"A
+base_color_outputoutput
+nodenamediffuse5
+typecolor3"A
+roughness_outputoutput
+nodename
+roughness5
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap7
+typevector3Ñ
+Knight_Wstandard_surface
+typesurfaceshader"]
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KnightWhite"c
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_KnightWhite".
+
+subsurfaceinput
+
+value0
+typefloat"c
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KnightWhite"d
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_KnightWhite"8
+subsurface_scaleinput
+value0.003
+typefloat"V
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_KnightWhitet
+
+M_Knight_Wsurfacematerial
+typematerial"C
+surfaceshaderinput
+nodenameKnight_W
+typesurfaceshader
+NG_PawnBodyBlack	nodegraph"å
+diffuse9image
+typecolor3"i
+fileinput,
+value#chess_set/pawn_black_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"o
+	metallic9image
+typefloat"L
+fileinput+
+value"chess_set/pawn_shared_metallic.jpg
+typefilename"q
+
+roughness9image
+typefloat"M
+fileinput,
+value#chess_set/pawn_shared_roughness.jpg
+typefilename"m
+normal9image
+typevector3"J
+fileinput)
+value chess_set/pawn_shared_normal.jpg
+typefilename"`
+mtlxnormalmap13	normalmap
+typevector3"1
+ininput
+nodenamenormal9
+typevector3"A
+base_color_outputoutput
+nodenamediffuse9
+typecolor3"@
+metalness_outputoutput
+nodename	metallic9
+typefloat"A
+roughness_outputoutput
+nodename
+roughness9
+typefloat"E
+normal_outputoutput
+nodenamemtlxnormalmap13
+typevector3Ô
+Pawn_Body_Bstandard_surface
+typesurfaceshader"_
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_PawnBodyBlack"\
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_PawnBodyBlack"e
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_PawnBodyBlack".
+
+subsurfaceinput
+
+value0
+typefloat"e
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_PawnBodyBlack"f
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_PawnBodyBlack"8
+subsurface_scaleinput
+value0.003
+typefloat"X
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_PawnBodyBlackz
+M_Pawn_Body_Bsurfacematerial
+typematerial"F
+surfaceshaderinput
+nodenamePawn_Body_B
+typesurfaceshader
+NG_PawnBodyWhite	nodegraph"å
+diffuse8image
+typecolor3"i
+fileinput,
+value#chess_set/pawn_white_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"o
+	metallic8image
+typefloat"L
+fileinput+
+value"chess_set/pawn_shared_metallic.jpg
+typefilename"q
+
+roughness8image
+typefloat"M
+fileinput,
+value#chess_set/pawn_shared_roughness.jpg
+typefilename"m
+normal8image
+typevector3"J
+fileinput)
+value chess_set/pawn_shared_normal.jpg
+typefilename"`
+mtlxnormalmap10	normalmap
+typevector3"1
+ininput
+nodenamenormal8
+typevector3"A
+base_color_outputoutput
+nodenamediffuse8
+typecolor3"@
+metalness_outputoutput
+nodename	metallic8
+typefloat"A
+roughness_outputoutput
+nodename
+roughness8
+typefloat"E
+normal_outputoutput
+nodenamemtlxnormalmap10
+typevector3Ô
+Pawn_Body_Wstandard_surface
+typesurfaceshader"_
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_PawnBodyWhite"\
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_PawnBodyWhite"e
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_PawnBodyWhite".
+
+subsurfaceinput
+
+value0
+typefloat"e
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_PawnBodyWhite"f
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_PawnBodyWhite"8
+subsurface_scaleinput
+value0.003
+typefloat"X
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_PawnBodyWhitez
+M_Pawn_Body_Wsurfacematerial
+typematerial"F
+surfaceshaderinput
+nodenamePawn_Body_W
+typesurfaceshaderÙ
+NG_PawnTopBlack	nodegraph"r
+mtlximage19image
+typefloat"M
+fileinput,
+value#chess_set/pawn_shared_roughness.jpg
+typefilename"q
+mtlximage18image
+typevector3"J
+fileinput)
+value chess_set/pawn_shared_normal.jpg
+typefilename"d
+mtlxnormalmap14	normalmap
+typevector3"5
+ininput
+nodenamemtlximage18
+typevector3"B
+roughness_outputoutput
+nodenamemtlximage19
+typefloat"E
+normal_outputoutput
+nodenamemtlxnormalmap14
+typevector3è
+
+Pawn_Top_Bstandard_surface
+typesurfaceshader"d
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_PawnTopBlack"W
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_PawnTopBlack"5
+
+base_colorinput
+value1, 1, 1
+typecolor3"0
+transmissioninput
+
+value1
+typefloat"K
+transmission_colorinput
+value0.2995, 0.5, 0.450276
+typecolor3".
+
+subsurfaceinput
+
+value0
+typefloat";
+subsurface_colorinput
+value1, 1, 1
+typecolor3"<
+subsurface_radiusinput
+value1, 1, 1
+typecolor3"8
+subsurface_scaleinput
+value0.003
+typefloatx
+M_Pawn_Top_Bsurfacematerial
+typematerial"E
+surfaceshaderinput
+nodename
+Pawn_Top_B
+typesurfaceshaderÙ
+NG_PawnTopWhite	nodegraph"r
+mtlximage21image
+typefloat"M
+fileinput,
+value#chess_set/pawn_shared_roughness.jpg
+typefilename"q
+mtlximage20image
+typevector3"J
+fileinput)
+value chess_set/pawn_shared_normal.jpg
+typefilename"d
+mtlxnormalmap15	normalmap
+typevector3"5
+ininput
+nodenamemtlximage20
+typevector3"B
+roughness_outputoutput
+nodenamemtlximage21
+typefloat"E
+normal_outputoutput
+nodenamemtlxnormalmap15
+typevector3Ö
+
+Pawn_Top_Wstandard_surface
+typesurfaceshader"d
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_PawnTopWhite"W
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_PawnTopWhite"5
+
+base_colorinput
+value1, 1, 1
+typecolor3"0
+transmissioninput
+
+value1
+typefloat"A
+transmission_colorinput
+value1, 1, 0.828
+typecolor3".
+
+subsurfaceinput
+
+value0
+typefloat";
+subsurface_colorinput
+value1, 1, 1
+typecolor3"<
+subsurface_radiusinput
+value1, 1, 1
+typecolor3"8
+subsurface_scaleinput
+value0.003
+typefloatx
+M_Pawn_Top_Wsurfacematerial
+typematerial"E
+surfaceshaderinput
+nodename
+Pawn_Top_W
+typesurfaceshaderê
+NG_QueenBlack	nodegraph"å
+diffuseimage
+typecolor3"j
+fileinput-
+value$chess_set/queen_black_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"o
+metallicimage
+typefloat"M
+fileinput,
+value#chess_set/queen_shared_metallic.jpg
+typefilename"p
+	roughnessimage
+typefloat"M
+fileinput,
+value#chess_set/queen_black_roughness.jpg
+typefilename"l
+sssimage
+typefloat"O
+fileinput.
+value%chess_set/queen_shared_scattering.jpg
+typefilename"l
+normalimage
+typevector3"J
+fileinput)
+value chess_set/queen_black_normal.jpg
+typefilename"^
+mtlxnormalmap2	normalmap
+typevector3"0
+ininput
+nodenamenormal
+typevector3"@
+base_color_outputoutput
+nodenamediffuse
+typecolor3"?
+metalness_outputoutput
+nodenamemetallic
+typefloat"@
+roughness_outputoutput
+nodename	roughness
+typefloat";
+subsurface_outputoutput
+nodenamesss
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap2
+typevector3Ü
+Queen_Bstandard_surface
+typesurfaceshader"\
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_QueenBlack"Y
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_QueenBlack"b
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_QueenBlack"[
+
+subsurfaceinput
+outputsubsurface_output
+typefloat
+	nodegraphNG_QueenBlack"b
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_QueenBlack"c
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_QueenBlack"8
+subsurface_scaleinput
+value0.003
+typefloat"U
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_QueenBlackr
+	M_Queen_Bsurfacematerial
+typematerial"B
+surfaceshaderinput
+nodenameQueen_B
+typesurfaceshaderö
+NG_QueenWhite	nodegraph"ç
+diffuse1image
+typecolor3"j
+fileinput-
+value$chess_set/queen_white_base_color.jpg
+typefilename
+
+colorspacesrgb_texture"p
+	metallic1image
+typefloat"M
+fileinput,
+value#chess_set/queen_shared_metallic.jpg
+typefilename"q
+
+roughness1image
+typefloat"M
+fileinput,
+value#chess_set/queen_white_roughness.jpg
+typefilename"m
+sss1image
+typefloat"O
+fileinput.
+value%chess_set/queen_shared_scattering.jpg
+typefilename"m
+normal1image
+typevector3"J
+fileinput)
+value chess_set/queen_white_normal.jpg
+typefilename"_
+mtlxnormalmap3	normalmap
+typevector3"1
+ininput
+nodenamenormal1
+typevector3"A
+base_color_outputoutput
+nodenamediffuse1
+typecolor3"@
+metalness_outputoutput
+nodename	metallic1
+typefloat"A
+roughness_outputoutput
+nodename
+roughness1
+typefloat"<
+subsurface_outputoutput
+nodenamesss1
+typefloat"D
+normal_outputoutput
+nodenamemtlxnormalmap3
+typevector3Ü
+Queen_Wstandard_surface
+typesurfaceshader"\
+
+base_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_QueenWhite"Y
+	metalnessinput
+outputmetalness_output
+typefloat
+	nodegraphNG_QueenWhite"b
+specular_roughnessinput
+outputroughness_output
+typefloat
+	nodegraphNG_QueenWhite"[
+
+subsurfaceinput
+outputsubsurface_output
+typefloat
+	nodegraphNG_QueenWhite"b
+subsurface_colorinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_QueenWhite"c
+subsurface_radiusinput
+outputbase_color_output
+typecolor3
+	nodegraphNG_QueenWhite"8
+subsurface_scaleinput
+value0.001
+typefloat"U
+normalinput
+outputnormal_output
+typevector3
+	nodegraphNG_QueenWhiter
+	M_Queen_Wsurfacematerial
+typematerial"B
+surfaceshaderinput
+nodenameQueen_W
+typesurfaceshaderæ
+
+L_ChessSetlook"J
+
+Chessboardmaterialassign
+geom
+Chessboard
+materialM_Chessboard"D
+Bishop_Bmaterialassign
+geomBishop_B
+material
+M_Bishop_B"D
+Bishop_Wmaterialassign
+geomBishop_W
+material
+M_Bishop_W"D
+Castle_Bmaterialassign
+geomCastle_B
+material
+M_Castle_B"D
+Castle_Wmaterialassign
+geomCastle_W
+material
+M_Castle_W"D
+Knight_Bmaterialassign
+geomKnight_B
+material
+M_Knight_B"D
+Knight_Wmaterialassign
+geomKnight_W
+material
+M_Knight_W">
+King_Bmaterialassign
+geomKing_B
+materialM_King_B">
+King_Wmaterialassign
+geomKing_W
+materialM_King_W"M
+Pawn_Body_Bmaterialassign
+geomPawn_Body_B
+materialM_Pawn_Body_B"J
+
+Pawn_Top_Bmaterialassign
+geom
+Pawn_Top_B
+materialM_Pawn_Top_B"M
+Pawn_Body_Wmaterialassign
+geomPawn_Body_W
+materialM_Pawn_Body_W"J
+
+Pawn_Top_Wmaterialassign
+geom
+Pawn_Top_W
+materialM_Pawn_Top_W"A
+Queen_Bmaterialassign
+geomQueen_B
+material	M_Queen_B"A
+Queen_Wmaterialassign
+geomQueen_W
+material	M_Queen_W

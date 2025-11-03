@@ -1,0 +1,195 @@
+Metadata-Version: 2.1
+Name: materialxpb
+Version: 1.39.4
+Summary: Bidirectional conversion utilities for MaterialX and Google Protobuf
+Author-email: Bernard Kwok <kwokcb@gmail.com>
+Project-URL: Homepage, https://kwokcb.github.io/materialxpb/
+Project-URL: Issues, https://github.com/kwokcb/materialxpb/issues
+Project-URL: Source Code, https://github.com/kwokcb/materialxpb
+Project-URL: Documentation, https://kwokcb.github.io/materialxpb/
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+# MaterialX Protobuf Converter
+
+A sample Python utility for converting MaterialX documents to and from Protocol Buffer format.
+
+## What is Protocol Buffers?
+
+[Protocol Buffers (protobuf)](https://protobuf.dev/) is Google's mechanism for serializing structured data.
+
+## Benefits of Protocol Buffer Format
+
+- **Compact**: Binary format is smaller than XML
+- **Fast**: Efficient serialization and deserialization
+- **Cross-platform**: Language-agnostic format works across different platforms and programming languages
+- **Typed**: Strong typing for data integrity
+- **Versioning**: Built-in support for schema versioning and backward compatibility
+
+## Overview
+
+This project provides tools to:
+
+- Convert MaterialX XML documents to Protocol Buffer format
+- Serialize MaterialX documents to binary `.mxpb` files
+- Export MaterialX documents to JSON format
+- Convert Protocol Buffer documents back to MaterialX XML
+- Generate visual diagrams of MaterialX document structure
+
+## Prerequisites
+
+### macOS Setup
+
+Install Protocol Buffers compiler:
+   ```bash
+   brew install protobuf
+   ```
+
+### Windows Setup
+
+Install Protocol Buffers compiler:
+   ```bash
+   choco install protoc
+   ```
+
+### Linux Setup   
+Install Protocol Buffers compiler:
+   ```bash
+   sudo apt-get install -y protobuf-compiler
+   ```
+
+### Python Setup
+
+1. Install Python protobuf library:
+   ```bash
+   pip install --only-binary=all protobuf
+   ```
+2. Install MaterialX Python library:
+   ```bash
+   pip install MaterialX
+   ```
+
+## Protocol Buffer Schema
+
+The schema defines two main message types:
+
+- **MaterialXElement**: Represents a MaterialX element with name, type, attributes, and child elements
+- **MaterialXDocument**: Represents the root document with attributes and top-level elements
+
+This schema reflects the simplicity of the MaterialX representation.
+
+The schema is defined in the `materialx.proto` file.
+
+## Generating Python Code from Proto Schema
+
+Using the `materialx.proto`, Python bindings can be generated with the following command:
+
+```bash
+protoc --python_out=. materialx.proto
+```
+
+This generates `materialx_pb2.py` which contains the Protocol Buffer message classes.
+These classes are used in the conversion logic to serialize and deserialize MaterialX documents.
+
+## File Structure
+
+```
+- materialx.proto             # Protocol Buffer schema definition
+- materialx_pb2.py            # Generated Python protobuf bindings
+- materialx_serializer.py     # Conversion logic between MaterialX and Protobuf
+- main.py                     # Command-line utility for conversion
+- *.mtlx                      # Sample MaterialX documents
+```
+
+
+## Usage
+
+### MaterialX to Protobuf Conversion
+
+Convert a MaterialX document to Protobuf format:
+
+```bash
+python main.py path/to/document.mtlx
+```
+
+This command will generate three output files:
+
+1. **`.json`** - Human-readable JSON representation
+2. **`.mxpb`** - Binary Protocol Buffer format (compact serialization)
+3. **`_converted.mtlx`** - Round-trip conversion back to MaterialX XML (for validation)
+
+#### Example
+
+```bash
+python main.py standard_surface_chess_set.mtlx
+```
+
+Outputs:
+- `standard_surface_chess_set.json` - JSON format
+- `standard_surface_chess_set.mxpb` - Binary protobuf
+- `standard_surface_chess_set_converted.mtlx` - Converted back to MaterialX
+
+### Protobuf to MaterialX Conversion
+
+Convert a Protobuf binary file back to MaterialX XML:
+
+```bash
+python main.py path/to/document.mxpb
+```
+
+This will generate a MaterialX XML file named `document__from_pb.mtlx`.
+
+## Core Components
+
+### materialx_serializer.py
+
+#### MaterialXToProtobuf
+Converts MaterialX documents to Protocol Buffer format:
+- Traverses the MaterialX document tree
+- Extracts element names, types, and attributes
+- Recursively converts child elements
+- Preserves document-level attributes
+
+#### ProtobufToMaterialX
+Converts Protocol Buffer format back to MaterialX:
+- Reconstructs MaterialX document structure
+- Restores element hierarchy and attributes
+- Creates valid MaterialX documents
+
+#### Util
+Utility functions for debugging and visualization:
+- `debug_inspect()` - Detailed element tree inspection
+- `debug_inspect_compact()` - Compact tree view
+- `debug_inspect_simple()` - Simple tree visualization
+- `generate_mermaid_diagram()` - Generate Mermaid diagrams for visualization
+
+### main.py
+
+Command-line interface that:
+1. Reads MaterialX XML document
+2. Converts to Protocol Buffer format
+3. Serializes to JSON and binary formats
+4. Performs round-trip conversion validation
+5. Optionally generates Mermaid diagrams
+
+## Sample Files
+
+The repository includes sample MaterialX documents:
+- `standard_surface_chess_set.mtlx` - Chess set with standard surface shader
+- `unlit_cross.mtlx` - Simple unlit cross geometry
+
+Each sample includes its converted outputs (`.json`, `.mxpb`, `_converted.mtlx`).
+
+## Visualization
+
+Enable Mermaid diagram generation in `main.py` by setting `write_mermaid = True`. This generates a `.md` file with a Mermaid diagram showing the document structure, which can be viewed in Markdown preview or at [https://mermaid.live](https://mermaid.live).
+
+## License
+
+This is a prototype project for MaterialX serialization research.
