@@ -79,10 +79,14 @@ Install Protocol Buffers compiler:
 
 The schema defines two main message types:
 
-- **MaterialXElement**: Represents a MaterialX element with name, type, attributes, and child elements
-- **MaterialXDocument**: Represents the root document with attributes and top-level elements
+- **Attribute**: String key value pair. This is added to allow usage of repeated attributes as opposed to usage of maps. Maps in ProtoBuf are ordered which
+is undesirable for MaterialX where attribute order matters for types such as node inputs and outputs as these define the signature of the node.
+- **MaterialXElement**: Represents a MaterialX element with name, type, attributes, and child elements.
+- **MaterialXDocument**: Represents the root of the element hierarchy and contains top-level attributes.
 
 This schema reflects the simplicity of the MaterialX representation.
+
+A schema **Version** message is also provided for version management including allowing for an upgrade mechanism if ever required. 
 
 The schema is defined in the `materialx.proto` file.
 
@@ -115,14 +119,15 @@ These classes are used in the conversion logic to serialize and deserialize Mate
 Convert a MaterialX document to Protobuf format:
 
 ```bash
-python main.py path/to/document.mtlx
+python main.py path/to/<document>.mtlx
 ```
 
-This command will generate three output files:
+This command can optionally generate three output files:
 
-1. **`.json`** - Human-readable JSON representation
+1. **`.json`** - JSON representation
 2. **`.mxpb`** - Binary Protocol Buffer format (compact serialization)
-3. **`_converted.mtlx`** - Round-trip conversion back to MaterialX XML (for validation)
+3. **`.mmd`** - Mermaid diagram
+4. **`_converted.mtlx`** - Round-trip conversion back to MaterialX XML (for validation)
 
 #### Example
 
@@ -140,10 +145,15 @@ Outputs:
 Convert a Protobuf binary file back to MaterialX XML:
 
 ```bash
-python main.py path/to/document.mxpb
+python main.py path/to/<document>.mxpb
 ```
 
-This will generate a MaterialX XML file named `document__from_pb.mtlx`.
+This will generate a MaterialX XML file named `<document>_from_pb.mtlx`.
+
+This command can optionally generate three output files:
+
+1. **`.json`** - JSON representation
+2. **`.mmd`** - Mermaid diagram
 
 ## Core Components
 
@@ -151,45 +161,33 @@ This will generate a MaterialX XML file named `document__from_pb.mtlx`.
 
 #### MaterialXToProtobuf
 Converts MaterialX documents to Protocol Buffer format:
-- Traverses the MaterialX document tree
-- Extracts element names, types, and attributes
-- Recursively converts child elements
-- Preserves document-level attributes
+- Extracts document-level attributes
+- Traverses the MaterialX document 
+  - Extracts element names, types, and attributes
+  - Recursively converts child elements
 
 #### ProtobufToMaterialX
 Converts Protocol Buffer format back to MaterialX:
-- Reconstructs MaterialX document structure
+- Creates MaterialX document
+- Reconstructs MaterialX document attributes
 - Restores element hierarchy and attributes
-- Creates valid MaterialX documents
 
 #### Util
 Utility functions for debugging and visualization:
-- `debug_inspect()` - Detailed element tree inspection
-- `debug_inspect_compact()` - Compact tree view
-- `debug_inspect_simple()` - Simple tree visualization
+- `from_string()` - PB doc from string
+- `to_string()` - PB doc to string
+- `to_json()` - PB doc to json
 - `generate_mermaid_diagram()` - Generate Mermaid diagrams for visualization
-
-### main.py
-
-Command-line interface that:
-1. Reads MaterialX XML document
-2. Converts to Protocol Buffer format
-3. Serializes to JSON and binary formats
-4. Performs round-trip conversion validation
-5. Optionally generates Mermaid diagrams
 
 ## Sample Files
 
 The repository includes sample MaterialX documents:
 - `standard_surface_chess_set.mtlx` - Chess set with standard surface shader
-- `unlit_cross.mtlx` - Simple unlit cross geometry
+- `unlit_cross.mtlx` - Simple unlit cross shader
 
-Each sample includes its converted outputs (`.json`, `.mxpb`, `_converted.mtlx`).
+Each sample includes its converted outputs as appropriate (`.json`, `.mxpb`, `_converted.mtlx`, `from_pb.mtlx`).
 
 ## Visualization
 
-Enable Mermaid diagram generation in `main.py` by setting `write_mermaid = True`. This generates a `.md` file with a Mermaid diagram showing the document structure, which can be viewed in Markdown preview or at [https://mermaid.live](https://mermaid.live).
+Enable Mermaid diagram generation in `main.py` by setting `write_mermaid = True`. This generates a `.md` file with a Mermaid diagram showing the document structure.
 
-## License
-
-This is a prototype project for MaterialX serialization research.

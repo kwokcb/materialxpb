@@ -34,6 +34,7 @@ def main():
     parser.add_argument("-cb", "--convert_back", action="store_true", help="Convert back to MaterialX after Protobuf conversion.")
     parser.add_argument("-wm", "--write_mermaid", action="store_true", help="Output Mermaid diagram of the Protobuf document.")
     parser.add_argument('-of', '--output_folder', type=str, help='Output folder for converted files.')
+    parser.add_argument('-dbg', '--debug_pb_doc', type=int, default=0, help='Enable debug output.')
 
     args = parser.parse_args()
     input_file = args.inputFile
@@ -102,9 +103,16 @@ def main():
             json_str = Util.to_json(pb_doc, indent=2)
             write_file(input_file, output_folder, '.json', json_str, True)
 
-        debug_pb_doc = False
+        debug_pb_doc = args.debug_pb_doc if args.debug_pb_doc else False
         if debug_pb_doc:
-            Util.debug_inspect_simple(pb_doc)    
+            print("*" * 80)
+            if debug_pb_doc == 1:
+                Util.debug_inspect_simple(pb_doc)
+            elif debug_pb_doc == 2:
+                Util.debug_inspect_compact(pb_doc)
+            elif debug_pb_doc == 3:
+                Util.debug_inspect(pb_doc)    
+            print("*" * 80)
 
 
 if __name__ == "__main__":

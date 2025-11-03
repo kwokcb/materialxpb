@@ -204,14 +204,13 @@ class Util:
             indent = "  " * depth
             name = element.get('name', 'unnamed')
             elem_type = element.get('type', 'no-type')
-            
             print(f"{indent}{name} ({elem_type})")
-            
-            # Print attributes
-            attrs = element.get('attributes', {})
-            for key, value in attrs.items():
+            # Print attributes (now a list of dicts)
+            attrs = element.get('attributes', [])
+            for attr in attrs:
+                key = attr.get('key', '')
+                value = attr.get('value', '')
                 print(f"{indent}  │ {key}: {value}")
-            
             # Print children recursively
             children = element.get('children', [])
             if children:
@@ -219,7 +218,12 @@ class Util:
                 for child in children:
                     print_element(child, depth + 2)
         
-        print("=== MaterialX Structure ===")
+        pb_version = pb_doc.schema_version
+        print("Schema Version:", f"{pb_version.major}.{pb_version.minor}.{pb_version.patch}")
+
+        attribs = ", ".join([f"{attr.get('key', '')}={attr.get('value', '')}" for attr in data.get('attributes', [])])
+        print("Document:" + (f" [{attribs}]" if attribs else ""))
+
         for element in data.get('elements', []):
             print_element(element, 0)
         
@@ -229,28 +233,36 @@ class Util:
     def debug_inspect_compact(pb_doc, max_depth=10, _current_depth=0):
         
         data = MessageToDict(pb_doc)
-        
+
+        def print_attributes(element, depth):
+            indent = "  " * depth
+            name = element.get('name', '')
+            elem_type = element.get('type', '')
+            if elem_type: 
+                elem_type = f'({elem_type})'
+            attrs = element.get('attributes', [])
+            attrs_preview = ", ".join([f"{attr.get('key', '')}={attr.get('value', '')}" for attr in attrs[:2]])
+            if attrs_preview:
+                attrs_preview = f" [{attrs_preview}]"
+            print(f"{indent}{name} {elem_type}{attrs_preview}")
+
         def print_element(element, depth):
             if depth > max_depth:
                 return
-                
-            indent = "  " * depth
-            name = element.get('name', 'unnamed')
-            elem_type = element.get('type', 'no-type')
-            children_count = len(element.get('children', []))
-            
             # Compact line showing key info
-            attrs_preview = ", ".join([f"{k}={v}" for k, v in list(element.get('attributes', {}).items())[:2]])
-            if attrs_preview:
-                attrs_preview = f" [{attrs_preview}]"
-                
-            print(f"{indent}{name} ({elem_type}){attrs_preview}")
-            
+            print_attributes(element, depth)
+            children_count = len(element.get('children', []))
+
             # Recursively print children
             for child in element.get('children', []):
                 print_element(child, depth + 1)
         
-        print("=== MaterialX Structure ===")
+        pb_version = pb_doc.schema_version
+        print("Schema Version:", f"{pb_version.major}.{pb_version.minor}.{pb_version.patch}")
+
+        attribs = ", ".join([f"{attr.get('key', '')}={attr.get('value', '')}" for attr in data.get('attributes', [])])
+        print("Document:" + (f" [{attribs}]" if attribs else ""))
+
         for element in data.get('elements', []):
             print_element(element, 0)
         
@@ -274,7 +286,11 @@ class Util:
         
         data = MessageToDict(pb_doc)
         
-        print("=== MaterialX Document Tree ===")
+        pb_version = pb_doc.schema_version
+        print("Schema Version:", f"{pb_version.major}.{pb_version.minor}.{pb_version.patch}")
+
+        attribs = ", ".join([f"{attr.get('key', '')}={attr.get('value', '')}" for attr in data.get('attributes', [])])
+        print("Document:" + (f" [{attribs}]" if attribs else ""))
         for i, element in enumerate(data.get('elements', [])):
             print_tree(element, "", i == len(data.get('elements', [])) - 1)
         
