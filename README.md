@@ -2,6 +2,11 @@
 
 A sample Python utility for converting MaterialX documents to and from Protocol Buffer format.
 
+```mermaid
+graph LR
+    A[<img src='https://artwork.aswf.io/projects/materialx/stacked/color/materialx-stacked-color.svg' width='100'/>] <--> B[<img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png' width='100'/>]
+```
+
 ## What is Protocol Buffers?
 
 [Protocol Buffers (protobuf)](https://protobuf.dev/) is Google's mechanism for serializing structured data.
