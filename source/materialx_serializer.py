@@ -16,7 +16,6 @@ SCHEMA_VERSION_PATCH = 4
 
 class MaterialXToProtobuf:
     """
-    @class MaterialXToProtobuf
     @brief Converter class to transform MaterialX document objects into Protobuf MaterialXDocument messages.
     @details
     - Traverses the MaterialX document structure and constructs the corresponding Protobuf message hierarchy.
@@ -83,7 +82,6 @@ class MaterialXToProtobuf:
 
 class ProtobufToMaterialX:
     """
-    @class ProtobufToMaterialX
     @brief Converter class to transform Protobuf MaterialXDocument messages back into MaterialX document objects.
     @details
     - Traverses the Protobuf message structure and reconstructs the corresponding MaterialX document hierarchy.

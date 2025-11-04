@@ -1,11 +1,11 @@
 
 
 # MaterialX Protobuf Converter
-[![Build Status](https://github.com/kwokcb/materialxpb/actions/workflows/main.yml/badge.svg)](https://github.com/kwokcb/materialxpb/actions/workflows/main.yml)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-kwokcb%2Fmaterialxpb-181717?logo=github)](https://github.com/kwokcb/materialxpb) [![Build Status](https://github.com/kwokcb/materialxpb/actions/workflows/main.yml/badge.svg)](https://github.com/kwokcb/materialxpb/actions/workflows/main.yml)
 
-A sample Python utility for converting MaterialX documents to and from Protocol Buffer format.
+Python utilities for converting MaterialX documents to and from Protocol Buffer format.
 
-<img src="./documents/images/flow.svg" alt="Interop diagram" width="100%"/>
+![Interop diagram](https://raw.githubusercontent.com/kwokcb/materialxpb/main/documents/images/flow.svg)
 
 ## What is Protocol Buffers?
 
