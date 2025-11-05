@@ -4,3 +4,4 @@ protobuf>=6.33.0
 [dev]
 pytest
 json
+mypy>=1.0.0

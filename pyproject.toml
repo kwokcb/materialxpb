@@ -26,7 +26,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "json"
+    "json",
+    "mypy>=1.0.0"
 ]
 
 [tool.setuptools]
@@ -34,7 +35,7 @@ py-modules = ["main", "materialx_serializer", "materialx_pb2"]
 package-dir = {"" = "source"}
 
 [tool.setuptools.package-data]
-"*" = ["data/*.*"]
+"*" = ["data/*.*", "*.pyi"]
 
 [project.scripts]
 materialxpb = "main:main"
