@@ -172,6 +172,13 @@ class ProtobufToMaterialX:
         return mx_elem
     
 class Util:
+    """
+    @brief Utility class for inspecting and debugging Protobuf MaterialXDocument messages.
+    @details
+    - Print the protobuf document structure in various formats.
+    - Generate Mermaid diagrams for visualization of the document hierarchy.
+    """
+
     def from_string(data):
         """Convert string data to Protobuf document."""              
         pb_doc = pb.MaterialXDocument()
@@ -186,13 +193,6 @@ class Util:
         """Convert Protobuf document to JSON string."""
         return MessageToJson(pb_doc, indent)
 
-    """
-    @class Util
-    @brief Utility class for inspecting and debugging Protobuf MaterialXDocument messages.
-    @details
-    - Print the protobuf document structure in various formats.
-    - Generate Mermaid diagrams for visualization of the document hierarchy.
-    """
     @staticmethod
     def debug_inspect(pb_doc, max_depth=10, _current_depth=0):
         
@@ -298,16 +298,7 @@ class Util:
     def generate_mermaid_diagram(pb_doc):
         """
         @brief Generate a Mermaid diagram (graph LR) from a protobuf document hierarchy.
-        @details
-        - Converts the protobuf message to a dict via google.protobuf.json_format.MessageToDict.
-        - Creates one node per element labeled "name : type" (node IDs use the element name with spaces replaced by underscores).
-        - Connects each element to its children with directed edges.
-        @note This representation can be less readable when elements have many input/output children, as they are rendered as regular child nodes.
-        @param pb_doc Protobuf message describing the document; expected schema:
-            - elements: list of elements, each with:
-                - name: str
-                - type: str
-                - children: list of elements (same structure)
+        @param pb_doc Protobuf message describing the document
         @return str Mermaid diagram source code.
         """
         data = MessageToDict(pb_doc)
