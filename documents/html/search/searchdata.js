@@ -3,10 +3,10 @@ var indexSectionsWithContent =
   0: "_bcdefghilmoprstuvw",
   1: "mpuv",
   2: "mt",
-  3: "mrt",
+  3: "borst",
   4: "_cdfgmtw",
   5: "_dhs",
-  6: "bcefgilmopstuvw"
+  6: "bcdefgilmopstuvw"
 };
 
 var indexSectionNames =

@@ -5,19 +5,40 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>YES/opinon_8md.html</loc>
+  </url>
+  <url>
+    <loc>YES/schema__example_8md.html</loc>
+  </url>
+  <url>
     <loc>YES/_r_e_a_d_m_e_8md.html</loc>
   </url>
   <url>
-    <loc>YES/main_8py.html</loc>
+    <loc>YES/build_2lib_2main_8py.html</loc>
   </url>
   <url>
-    <loc>YES/materialx__pb2_8py.html</loc>
+    <loc>YES/source_2main_8py.html</loc>
   </url>
   <url>
-    <loc>YES/materialx__serializer_8py.html</loc>
+    <loc>YES/build_2lib_2materialx__pb2_8py.html</loc>
+  </url>
+  <url>
+    <loc>YES/source_2materialx__pb2_8py.html</loc>
+  </url>
+  <url>
+    <loc>YES/build_2lib_2materialx__serializer_8py.html</loc>
+  </url>
+  <url>
+    <loc>YES/source_2materialx__serializer_8py.html</loc>
   </url>
   <url>
     <loc>YES/test__materialx_8py.html</loc>
+  </url>
+  <url>
+    <loc>YES/md_opinon.html</loc>
+  </url>
+  <url>
+    <loc>YES/md_schema__example.html</loc>
   </url>
   <url>
     <loc>YES/class_version_upgrader.html</loc>
@@ -53,6 +74,12 @@
     <loc>YES/namespacetest__materialx.html</loc>
   </url>
   <url>
+    <loc>YES/dir_4fef79e7177ba769987a8da36c892c5f.html</loc>
+  </url>
+  <url>
+    <loc>YES/dir_7a9c7094c62de71bbec4b12c7c975b93.html</loc>
+  </url>
+  <url>
     <loc>YES/dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html</loc>
   </url>
   <url>
@@ -63,6 +90,9 @@
   </url>
   <url>
     <loc>YES/doxygen_crawl.html</loc>
+  </url>
+  <url>
+    <loc>YES/pages.html</loc>
   </url>
   <url>
     <loc>YES/namespaces.html</loc>

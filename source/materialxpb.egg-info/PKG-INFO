@@ -234,6 +234,8 @@ Python utilities for converting MaterialX documents to and from Protocol Buffer 
 
 ## Benefits of Protocol Buffer Format
 
+Protobuf focuses on data integrity, version safety, and cross-language consistency. Key benefits include:
+
 - **Compact**: Binary format is smaller than XML
 - **Fast**: Efficient serialization and deserialization
 - **Cross-platform**: Language-agnostic format works across different platforms and programming languages
@@ -330,7 +332,7 @@ Convert a MaterialX document to Protobuf format:
 python main.py path/to/<document>.mtlx
 ```
 
-This command can optionally generate three output files:
+This command can optionally generate four output files:
 
 1. **`.json`** - JSON representation
 2. **`.mxpb`** - Binary Protocol Buffer format (compact serialization)
@@ -358,7 +360,7 @@ python main.py path/to/<document>.mxpb
 
 This will generate a MaterialX XML file named `<document>_from_pb.mtlx`.
 
-This command can optionally generate three output files:
+This command can optionally generate two output files:
 
 1. **`.json`** - JSON representation
 2. **`.mmd`** - Mermaid diagram

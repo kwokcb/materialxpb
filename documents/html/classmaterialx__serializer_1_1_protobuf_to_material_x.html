@@ -100,9 +100,15 @@ $(function(){initNavTree('classmaterialx__serializer_1_1_protobuf_to_material_x.
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af8a569ffa2fad7c5206da68f6906cbf5" id="r_af8a569ffa2fad7c5206da68f6906cbf5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8a569ffa2fad7c5206da68f6906cbf5">convert</a> (self, pb_doc, mx)</td></tr>
 <tr class="memdesc:af8a569ffa2fad7c5206da68f6906cbf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a Protobuf MaterialXDocument message to a MaterialX document object.  <br /></td></tr>
+<tr class="memitem:af8a569ffa2fad7c5206da68f6906cbf5" id="r_af8a569ffa2fad7c5206da68f6906cbf5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8a569ffa2fad7c5206da68f6906cbf5">convert</a> (self, pb_doc, mx)</td></tr>
+<tr class="memdesc:af8a569ffa2fad7c5206da68f6906cbf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a Protobuf MaterialXDocument message to a MaterialX document object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:add94872c4f85c82195d4078504a1a79a" id="r_add94872c4f85c82195d4078504a1a79a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add94872c4f85c82195d4078504a1a79a">_check_version_and_upgrade</a> (self, pb_doc, mx)</td></tr>
+<tr class="memdesc:add94872c4f85c82195d4078504a1a79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check schema version and perform upgrades if necessary.  <br /></td></tr>
+<tr class="memitem:aa6d67d23591d23ee65906215f844f79a" id="r_aa6d67d23591d23ee65906215f844f79a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6d67d23591d23ee65906215f844f79a">_convert_element</a> (self, pb_elem, parent, mx)</td></tr>
+<tr class="memdesc:aa6d67d23591d23ee65906215f844f79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively convert a Protobuf MaterialXElement to a MaterialX element.  <br /></td></tr>
 <tr class="memitem:add94872c4f85c82195d4078504a1a79a" id="r_add94872c4f85c82195d4078504a1a79a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add94872c4f85c82195d4078504a1a79a">_check_version_and_upgrade</a> (self, pb_doc, mx)</td></tr>
 <tr class="memdesc:add94872c4f85c82195d4078504a1a79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check schema version and perform upgrades if necessary.  <br /></td></tr>
 <tr class="memitem:aa6d67d23591d23ee65906215f844f79a" id="r_aa6d67d23591d23ee65906215f844f79a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6d67d23591d23ee65906215f844f79a">_convert_element</a> (self, pb_elem, parent, mx)</td></tr>
@@ -119,7 +125,86 @@ Protected Member Functions</h2></td></tr>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="add94872c4f85c82195d4078504a1a79a" name="add94872c4f85c82195d4078504a1a79a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add94872c4f85c82195d4078504a1a79a">&#9670;&#160;</a></span>_check_version_and_upgrade()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#add94872c4f85c82195d4078504a1a79a">&#9670;&#160;</a></span>_check_version_and_upgrade() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialx_serializer.ProtobufToMaterialX._check_version_and_upgrade </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>pb_doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check schema version and perform upgrades if necessary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pb_doc</td><td>The Protobuf MaterialXDocument message. </td></tr>
+    <tr><td class="paramname">mx</td><td>The MaterialX Python module. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new MaterialX document object. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>    <span class="keyword">def </span>_check_version_and_upgrade(self, pb_doc, mx):</div>
+<div class="line"><span class="lineno">  116</span>        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  117</span><span class="stringliteral">        @brief Check schema version and perform upgrades if necessary.</span></div>
+<div class="line"><span class="lineno">  118</span><span class="stringliteral">        @param pb_doc The Protobuf MaterialXDocument message.</span></div>
+<div class="line"><span class="lineno">  119</span><span class="stringliteral">        @param mx The MaterialX Python module.</span></div>
+<div class="line"><span class="lineno">  120</span><span class="stringliteral">        @return A new MaterialX document object.</span></div>
+<div class="line"><span class="lineno">  121</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  122</span>        doc = mx.createDocument()</div>
+<div class="line"><span class="lineno">  123</span>        </div>
+<div class="line"><span class="lineno">  124</span>        <span class="comment"># Check if version is set</span></div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> pb_doc.HasField(<span class="stringliteral">&#39;schema_version&#39;</span>):</div>
+<div class="line"><span class="lineno">  126</span>            major = pb_doc.schema_version.major</div>
+<div class="line"><span class="lineno">  127</span>            minor = pb_doc.schema_version.minor</div>
+<div class="line"><span class="lineno">  128</span>            patch = pb_doc.schema_version.patch</div>
+<div class="line"><span class="lineno">  129</span>            </div>
+<div class="line"><span class="lineno">  130</span>            <span class="comment"># Version compatibility check</span></div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">if</span> major &gt; SCHEMA_VERSION_MAJOR:</div>
+<div class="line"><span class="lineno">  132</span>                <span class="keywordflow">raise</span> ValueError(</div>
+<div class="line"><span class="lineno">  133</span>                    f<span class="stringliteral">&quot;Document schema version {major}.{minor}.{patch} is newer than &quot;</span></div>
+<div class="line"><span class="lineno">  134</span>                    f<span class="stringliteral">&quot;supported version {SCHEMA_VERSION_MAJOR}.{SCHEMA_VERSION_MINOR}.{SCHEMA_VERSION_PATCH}. &quot;</span></div>
+<div class="line"><span class="lineno">  135</span>                    f<span class="stringliteral">&quot;Please upgrade your software.&quot;</span></div>
+<div class="line"><span class="lineno">  136</span>                )</div>
+<div class="line"><span class="lineno">  137</span>            </div>
+<div class="line"><span class="lineno">  138</span>            <span class="comment"># Perform upgrades for older versions</span></div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">if</span> major &lt; SCHEMA_VERSION_MAJOR:</div>
+<div class="line"><span class="lineno">  140</span>                print(f<span class="stringliteral">&quot;Warning: Upgrading document from version {major}.{minor}.{patch} &quot;</span></div>
+<div class="line"><span class="lineno">  141</span>                      f<span class="stringliteral">&quot;to {SCHEMA_VERSION_MAJOR}.{SCHEMA_VERSION_MINOR}.{SCHEMA_VERSION_PATCH}&quot;</span>)</div>
+<div class="line"><span class="lineno">  142</span>                <span class="comment"># Add upgrade logic here when needed</span></div>
+<div class="line"><span class="lineno">  143</span>                <span class="comment"># self._upgrade_v0_to_v1(pb_doc)            </span></div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  145</span>            <span class="comment"># No version info - assume oldest supported version</span></div>
+<div class="line"><span class="lineno">  146</span>            print(<span class="stringliteral">&quot;Warning: Document has no schema version information. Assuming legacy format.&quot;</span>)</div>
+<div class="line"><span class="lineno">  147</span>        </div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">return</span> doc</div>
+<div class="line"><span class="lineno">  149</span>    </div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="add94872c4f85c82195d4078504a1a79a" name="add94872c4f85c82195d4078504a1a79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add94872c4f85c82195d4078504a1a79a">&#9670;&#160;</a></span>_check_version_and_upgrade() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,7 +283,80 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa6d67d23591d23ee65906215f844f79a" name="aa6d67d23591d23ee65906215f844f79a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6d67d23591d23ee65906215f844f79a">&#9670;&#160;</a></span>_convert_element()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d67d23591d23ee65906215f844f79a">&#9670;&#160;</a></span>_convert_element() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialx_serializer.ProtobufToMaterialX._convert_element </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>pb_elem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recursively convert a Protobuf MaterialXElement to a MaterialX element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pb_elem</td><td>The Protobuf MaterialXElement message to convert. </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent MaterialX element to which the new element will be added. </td></tr>
+    <tr><td class="paramname">mx</td><td>The MaterialX Python module for element creation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The newly created MaterialX element. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>    <span class="keyword">def </span>_convert_element(self, pb_elem, parent, mx):</div>
+<div class="line"><span class="lineno">  151</span>        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  152</span><span class="stringliteral">        @brief Recursively convert a Protobuf MaterialXElement to a MaterialX element.</span></div>
+<div class="line"><span class="lineno">  153</span><span class="stringliteral">        @param pb_elem The Protobuf MaterialXElement message to convert.</span></div>
+<div class="line"><span class="lineno">  154</span><span class="stringliteral">        @param parent The parent MaterialX element to which the new element will be added.</span></div>
+<div class="line"><span class="lineno">  155</span><span class="stringliteral">        @param mx The MaterialX Python module for element creation.</span></div>
+<div class="line"><span class="lineno">  156</span><span class="stringliteral">        @return The newly created MaterialX element.</span></div>
+<div class="line"><span class="lineno">  157</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  158</span>        <span class="comment"># Create element</span></div>
+<div class="line"><span class="lineno">  159</span>        <span class="comment">#print(&#39;Creating element:&#39;, pb_elem.type, pb_elem.name)</span></div>
+<div class="line"><span class="lineno">  160</span>        mx_elem = parent.addChildOfCategory(pb_elem.type, pb_elem.name)</div>
+<div class="line"><span class="lineno">  161</span>        </div>
+<div class="line"><span class="lineno">  162</span>        <span class="comment"># Set all attributes preserving order</span></div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">for</span> attr <span class="keywordflow">in</span> pb_elem.attributes:</div>
+<div class="line"><span class="lineno">  164</span>            <span class="comment">#print(&#39; Setting attribute:&#39;, attr.key, &#39;=&#39;, attr.value)</span></div>
+<div class="line"><span class="lineno">  165</span>            mx_elem.setAttribute(attr.key, attr.value)</div>
+<div class="line"><span class="lineno">  166</span>        </div>
+<div class="line"><span class="lineno">  167</span>        <span class="comment"># Recursively convert children</span></div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">for</span> pb_child <span class="keywordflow">in</span> pb_elem.children:</div>
+<div class="line"><span class="lineno">  169</span>            child_elem = self._convert_element(pb_child, mx_elem, mx)</div>
+<div class="line"><span class="lineno">  170</span>            <span class="comment">#print(&#39; Adding child element:&#39;, child_elem.getCategory(), child_elem.getName())</span></div>
+<div class="line"><span class="lineno">  171</span>            </div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">return</span> mx_elem</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa6d67d23591d23ee65906215f844f79a" name="aa6d67d23591d23ee65906215f844f79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d67d23591d23ee65906215f844f79a">&#9670;&#160;</a></span>_convert_element() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +429,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="af8a569ffa2fad7c5206da68f6906cbf5" name="af8a569ffa2fad7c5206da68f6906cbf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8a569ffa2fad7c5206da68f6906cbf5">&#9670;&#160;</a></span>convert()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a569ffa2fad7c5206da68f6906cbf5">&#9670;&#160;</a></span>convert() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,8 +482,63 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="materialx__serializer_8py.html">materialx_serializer.py</a></li>
+<a id="af8a569ffa2fad7c5206da68f6906cbf5" name="af8a569ffa2fad7c5206da68f6906cbf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a569ffa2fad7c5206da68f6906cbf5">&#9670;&#160;</a></span>convert() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialx_serializer.ProtobufToMaterialX.convert </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>pb_doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a Protobuf MaterialXDocument message to a MaterialX document object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pb_doc</td><td>The Protobuf MaterialXDocument message to convert. </td></tr>
+    <tr><td class="paramname">mx</td><td>The MaterialX Python module for document creation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reconstructed MaterialX document object. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>    <span class="keyword">def </span>convert(self, pb_doc, mx):</div>
+<div class="line"><span class="lineno">   98</span>        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   99</span><span class="stringliteral">        Convert a Protobuf MaterialXDocument message to a MaterialX document object.</span></div>
+<div class="line"><span class="lineno">  100</span><span class="stringliteral">        @param pb_doc The Protobuf MaterialXDocument message to convert.</span></div>
+<div class="line"><span class="lineno">  101</span><span class="stringliteral">        @param mx The MaterialX Python module for document creation.</span></div>
+<div class="line"><span class="lineno">  102</span><span class="stringliteral">        @return The reconstructed MaterialX document object.</span></div>
+<div class="line"><span class="lineno">  103</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  104</span>        <span class="comment"># Check version compatibility and upgrade if needed</span></div>
+<div class="line"><span class="lineno">  105</span>        doc = self._check_version_and_upgrade(pb_doc, mx)</div>
+<div class="line"><span class="lineno">  106</span>        </div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">for</span> pb_attribute <span class="keywordflow">in</span> pb_doc.attributes:</div>
+<div class="line"><span class="lineno">  108</span>            doc.setAttribute(pb_attribute.key, pb_attribute.value)</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">for</span> pb_element <span class="keywordflow">in</span> pb_doc.elements:</div>
+<div class="line"><span class="lineno">  111</span>            mx_element = self._convert_element(pb_element, doc, mx)</div>
+<div class="line"><span class="lineno">  112</span>            </div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">return</span> doc</div>
+<div class="line"><span class="lineno">  114</span>    </div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="source_2materialx__serializer_8py.html">source/materialx_serializer.py</a></li>
+<li><a class="el" href="build_2lib_2materialx__serializer_8py.html">build/lib/materialx_serializer.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

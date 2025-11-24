@@ -96,11 +96,12 @@ $(function(){initNavTree('index.html','',''); });
 <p><a href="https://github.com/kwokcb/materialxpb"><img src="https://img.shields.io/badge/GitHub-kwokcb%2Fmaterialxpb-181717?logo=github" alt="GitHub Repo" class="inline"/></a> <a href="https://github.com/kwokcb/materialxpb/actions/workflows/main.yml"><img src="https://github.com/kwokcb/materialxpb/actions/workflows/main.yml/badge.svg" alt="Build Status" style="pointer-events: none;" class="inline"/></a></p>
 <p>Python utilities for converting MaterialX documents to and from Protocol Buffer format.</p>
 <p><img src="https://raw.githubusercontent.com/kwokcb/materialxpb/main/documents/images/flow.svg" alt="Interop diagram" style="pointer-events: none;" class="inline"/></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 What is Protocol Buffers?</h1>
 <p><a href="https://protobuf.dev/">Protocol Buffers (protobuf)</a> is Google's mechanism for serializing structured data.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Benefits of Protocol Buffer Format</h1>
+<p>Protobuf focuses on data integrity, version safety, and cross-language consistency. Key benefits include:</p>
 <ul>
 <li><b>Compact</b>: Binary format is smaller than XML</li>
 <li><b>Fast</b>: Efficient serialization and deserialization</li>
@@ -108,7 +109,7 @@ Benefits of Protocol Buffer Format</h1>
 <li><b>Typed</b>: Strong typing for data integrity</li>
 <li><b>Versioning</b>: Built-in support for schema versioning and backward compatibility</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Overview</h1>
 <p>This project provides tools to:</p>
 <ul>
@@ -118,18 +119,18 @@ Overview</h1>
 <li>Convert Protocol Buffer documents back to MaterialX XML</li>
 <li>Generate visual diagrams of MaterialX document structure</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 Prerequisites</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 macOS Setup</h2>
 <p>Install Protocol Buffers compiler: </p><div class="fragment"><div class="line">brew install protobuf</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Windows Setup</h2>
 <p>Install Protocol Buffers compiler: </p><div class="fragment"><div class="line">choco install protoc</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 Linux Setup</h2>
 <p>Install Protocol Buffers compiler: </p><div class="fragment"><div class="line">sudo apt-get install -y protobuf-compiler</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Python Setup</h2>
 <ol type="1">
 <li>Install Python protobuf library: <div class="fragment"><div class="line">pip install --only-binary=all protobuf</div>
@@ -137,7 +138,7 @@ Python Setup</h2>
 <li>Install MaterialX Python library: <div class="fragment"><div class="line">pip install MaterialX</div>
 </div><!-- fragment --></li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Protocol Buffer Schema</h1>
 <p>The schema defines two main message types:</p>
 <ul>
@@ -148,32 +149,32 @@ Protocol Buffer Schema</h1>
 <p>This schema reflects the simplicity of the MaterialX representation.</p>
 <p>A schema <b>Version</b> message is also provided for version management including allowing for an upgrade mechanism if ever required.</p>
 <p>The schema is defined in the <span class="tt">materialx.proto</span> file.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 Generating Python Code from Proto Schema</h1>
 <p>Using the <span class="tt">materialx.proto</span>, Python bindings can be generated with the following command:</p>
 <div class="fragment"><div class="line">protoc --python_out=. materialx.proto</div>
-</div><!-- fragment --><p>This generates <span class="tt"><a class="el" href="materialx__pb2_8py.html">materialx_pb2.py</a></span> which contains the Protocol Buffer message classes. These classes are used in the conversion logic to serialize and deserialize MaterialX documents.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><p>This generates <span class="tt">materialx_pb2.py</span> which contains the Protocol Buffer message classes. These classes are used in the conversion logic to serialize and deserialize MaterialX documents.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 File Structure</h1>
 <div class="fragment"><div class="line">- materialx.proto             # Protocol Buffer schema definition</div>
 <div class="line">- materialx_pb2.py            # Generated Python protobuf bindings</div>
 <div class="line">- materialx_serializer.py     # Conversion logic between MaterialX and Protobuf</div>
 <div class="line">- main.py                     # Command-line utility for conversion</div>
 <div class="line">- *.mtlx                      # Sample MaterialX documents</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Usage</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 MaterialX to Protobuf Conversion</h2>
 <p>Convert a MaterialX document to Protobuf format:</p>
 <div class="fragment"><div class="line">python main.py path/to/&lt;document&gt;.mtlx</div>
-</div><!-- fragment --><p>This command can optionally generate three output files:</p>
+</div><!-- fragment --><p>This command can optionally generate four output files:</p>
 <ol type="1">
 <li><b><span class="tt">.json</span></b> - JSON representation</li>
 <li><b><span class="tt">.mxpb</span></b> - Binary Protocol Buffer format (compact serialization)</li>
 <li><b><span class="tt">.mmd</span></b> - Mermaid diagram</li>
 <li><b><span class="tt">_converted.mtlx</span></b> - Round-trip conversion back to MaterialX XML (for validation)</li>
 </ol>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Example</h3>
 <div class="fragment"><div class="line">python main.py standard_surface_chess_set.mtlx</div>
 </div><!-- fragment --><p>Outputs:</p><ul>
@@ -181,21 +182,21 @@ Example</h3>
 <li><span class="tt">standard_surface_chess_set.mxpb</span> - Binary protobuf</li>
 <li><span class="tt">standard_surface_chess_set_converted.mtlx</span> - Converted back to MaterialX</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 Protobuf to MaterialX Conversion</h2>
 <p>Convert a Protobuf binary file back to MaterialX XML:</p>
 <div class="fragment"><div class="line">python main.py path/to/&lt;document&gt;.mxpb</div>
 </div><!-- fragment --><p>This will generate a MaterialX XML file named <span class="tt">&lt;document&gt;_from_pb.mtlx</span>.</p>
-<p>This command can optionally generate three output files:</p>
+<p>This command can optionally generate two output files:</p>
 <ol type="1">
 <li><b><span class="tt">.json</span></b> - JSON representation</li>
 <li><b><span class="tt">.mmd</span></b> - Mermaid diagram</li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 Core Components</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 materialx_serializer.py</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 MaterialXToProtobuf</h3>
 <p>Converts MaterialX documents to Protocol Buffer format:</p><ul>
 <li>Extracts document-level attributes</li>
@@ -205,14 +206,14 @@ MaterialXToProtobuf</h3>
 </ul>
 </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 ProtobufToMaterialX</h3>
 <p>Converts Protocol Buffer format back to MaterialX:</p><ul>
 <li>Creates MaterialX document</li>
 <li>Reconstructs MaterialX document attributes</li>
 <li>Restores element hierarchy and attributes</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Util</h3>
 <p>Utility functions for debugging and visualization:</p><ul>
 <li><span class="tt">from_string()</span> - PB doc from string</li>
@@ -220,16 +221,16 @@ Util</h3>
 <li><span class="tt">to_json()</span> - PB doc to json</li>
 <li><span class="tt">generate_mermaid_diagram()</span> - Generate Mermaid diagrams for visualization</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Sample Files</h1>
 <p>The repository includes sample MaterialX documents:</p><ul>
 <li><span class="tt">standard_surface_chess_set.mtlx</span> - Chess set with standard surface shader</li>
 <li><span class="tt">unlit_cross.mtlx</span> - Simple unlit cross shader</li>
 </ul>
 <p>Each sample includes its converted outputs as appropriate (<span class="tt">.json</span>, <span class="tt">.mxpb</span>, <span class="tt">_converted.mtlx</span>, <span class="tt">from_pb.mtlx</span>).</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 Visualization</h1>
-<p>Enable Mermaid diagram generation in <span class="tt"><a class="el" href="main_8py.html">main.py</a></span> by setting <span class="tt">write_mermaid = True</span>. This generates a <span class="tt">.md</span> file with a Mermaid diagram showing the document structure. </p>
+<p>Enable Mermaid diagram generation in <span class="tt">main.py</span> by setting <span class="tt">write_mermaid = True</span>. This generates a <span class="tt">.md</span> file with a Mermaid diagram showing the document structure. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

@@ -26,6 +26,8 @@ var NAVTREE =
 [
   [ "Materialx Protobuf API", "index.html", [
     [ "MaterialX Protobuf Converter", "index.html", "index" ],
+    [ "Brief Blurb", "md_opinon.html", null ],
+    [ "Versioned Protobuf Schema for Shader Inputs", "md_schema__example.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [

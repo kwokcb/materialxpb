@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_20protocol_20buffers_0',['What is Protocol Buffers?',['../index.html#autotoc_md1',1,'']]]
+  ['generating_20python_20code_20from_20proto_20schema_0',['Generating Python Code from Proto Schema',['../index.html#autotoc_md14',1,'']]]
 ];

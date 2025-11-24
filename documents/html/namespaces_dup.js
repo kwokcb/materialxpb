@@ -1,9 +1,9 @@
 var namespaces_dup =
 [
     [ "main", "namespacemain.html", [
-      [ "compare_mtlx_documents", "namespacemain.html#a91da2335f09c25f0cc10a3be2b176a00", null ],
-      [ "main", "namespacemain.html#a3140e9a5b6a71ffbf498198cfc471b88", null ],
-      [ "write_file", "namespacemain.html#a23d1c45bd8fc0d2b71751819e04138f1", null ]
+      [ "compare_mtlx_documents", "namespacemain.html#a1d09f6316c4041ed8ecbc9cc7eeed877", null ],
+      [ "main", "namespacemain.html#a5994e9227a9b6b579910a9f91ffcddf5", null ],
+      [ "write_file", "namespacemain.html#ae9c1150bfb885ac95da048db64946e5b", null ]
     ] ],
     [ "materialx_pb2", "namespacematerialx__pb2.html", [
       [ "_globals", "namespacematerialx__pb2.html#a18808de5c538006f43220f4361449a29", null ],
