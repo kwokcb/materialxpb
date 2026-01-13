@@ -64,6 +64,23 @@ Install Protocol Buffers compiler:
    pip install MaterialX
    ```
 
+### C++ Setup
+
+For the C++ version, you'll need:
+
+1. **MaterialX C++ Library** (version 1.39.4 or later)
+   - Download from: https://github.com/AcademySoftwareFoundation/MaterialX
+   - Build and install following their instructions
+
+2. **Protocol Buffers C++ Library**
+   - **Windows:** `choco install protobuf` or use vcpkg
+   - **macOS:** `brew install protobuf`
+   - **Linux:** `sudo apt-get install libprotobuf-dev protobuf-compiler`
+
+3. **CMake** (version 3.14 or later)
+
+See `cpp/README.md` for detailed C++ build instructions.
+
 ## Protocol Buffer Schema
 
 The schema defines two main message types:
@@ -79,7 +96,9 @@ A schema **Version** message is also provided for version management including a
 
 The schema is defined in the `materialx.proto` file.
 
-## Generating Python Code from Proto Schema
+## Generating Code from Proto Schema
+
+### Python Bindings
 
 Using the `materialx.proto`, Python bindings can be generated with the following command:
 
@@ -88,27 +107,69 @@ protoc --python_out=. materialx.proto
 ```
 
 This generates `materialx_pb2.py` which contains the Protocol Buffer message classes.
-These classes are used in the conversion logic to serialize and deserialize MaterialX documents.
+
+### C++ Bindings
+
+For C++ development, generate C++ protobuf code:
+
+```bash
+protoc --cpp_out=../cpp materialx.proto
+```
+
+This generates `materialx.pb.h` and `materialx.pb.cc` in the cpp directory.
+
+### Automated Generation
+
+Use the provided script to generate both Python and C++ code:
+
+```bash
+./generate_stubs.sh
+```
 
 ## File Structure
 
+### Python Version
 ```
-- materialx.proto             # Protocol Buffer schema definition
-- materialx_pb2.py            # Generated Python protobuf bindings
-- materialx_serializer.py     # Conversion logic between MaterialX and Protobuf
-- main.py                     # Command-line utility for conversion
-- *.mtlx                      # Sample MaterialX documents
+source/
+├── materialx.proto             # Protocol Buffer schema definition
+├── materialx_pb2.py            # Generated Python protobuf bindings
+├── materialx_serializer.py     # Conversion logic between MaterialX and Protobuf
+├── materialx_serializer.pyi    # Type hints for Python
+├── main.py                     # Command-line utility for conversion
+└── data/
+    └── *.mtlx                  # Sample MaterialX documents
+```
+
+### C++ Version
+```
+cpp/
+├── CMakeLists.txt              # CMake build configuration
+├── build.sh / build.bat        # Build scripts
+├── main.cpp                    # Command-line utility (C++)
+├── materialx_serializer.h      # Serializer class declarations
+├── materialx_serializer.cpp    # Serializer class implementations
+└── README.md                   # C++ specific documentation
 ```
 
 
 ## Usage
 
-### MaterialX to Protobuf Conversion
+The library provides both Python and C++ implementations with identical functionality.
+
+### Python Version
+
+#### MaterialX to Protobuf Conversion
 
 Convert a MaterialX document to Protobuf format:
 
 ```bash
 python main.py path/to/<document>.mtlx
+```
+
+Or using the installed command:
+
+```bash
+materialxpb path/to/<document>.mtlx
 ```
 
 This command can optionally generate four output files:
@@ -121,15 +182,15 @@ This command can optionally generate four output files:
 #### Example
 
 ```bash
-python main.py standard_surface_chess_set.mtlx
+python main.py standard_surface_chess_set.mtlx --json --write_mermaid
 ```
 
 Outputs:
 - `standard_surface_chess_set.json` - JSON format
 - `standard_surface_chess_set.mxpb` - Binary protobuf
-- `standard_surface_chess_set_converted.mtlx` - Converted back to MaterialX
+- `standard_surface_chess_set_diagram.mmd` - Mermaid diagram
 
-### Protobuf to MaterialX Conversion
+#### Protobuf to MaterialX Conversion
 
 Convert a Protobuf binary file back to MaterialX XML:
 
@@ -139,14 +200,48 @@ python main.py path/to/<document>.mxpb
 
 This will generate a MaterialX XML file named `<document>_from_pb.mtlx`.
 
-This command can optionally generate two output files:
+### C++ Version
 
-1. **`.json`** - JSON representation
-2. **`.mmd`** - Mermaid diagram
+The C++ version provides the same functionality with identical command-line arguments:
+
+#### Building the C++ Version
+
+```bash
+cd cpp
+./build.sh          # On Unix-like systems
+# or
+build.bat           # On Windows
+```
+
+See `cpp/README.md` for detailed build instructions.
+
+#### Using the C++ Executable
+
+```bash
+./materialxpb document.mtlx
+./materialxpb document.mtlx --json --write_mermaid
+./materialxpb document.mxpb
+```
+
+All command-line options are identical between Python and C++ versions.
+
+### Command-Line Options
+
+Both Python and C++ versions support these options:
+
+| Option | Short | Description |
+|--------|-------|-------------|
+| `--json` | `-j` | Output JSON representation of the Protobuf document |
+| `--convert_back` | `-cb` | Convert back to MaterialX after Protobuf conversion |
+| `--write_mermaid` | `-wm` | Output Mermaid diagram of the Protobuf document |
+| `--output_folder` | `-of` | Output folder for converted files |
+| `--debug_pb_doc` | `-dbg` | Enable debug output (1=simple, 2=compact, 3=full) |
 
 ## Core Components
 
-### materialx_serializer.py
+The library is implemented in both Python and C++ with equivalent functionality.
+
+### Python Implementation (materialx_serializer.py)
 
 #### MaterialXToProtobuf
 Converts MaterialX documents to Protocol Buffer format:
@@ -167,6 +262,20 @@ Utility functions for debugging and visualization:
 - `to_string()` - PB doc to string
 - `to_json()` - PB doc to json
 - `generate_mermaid_diagram()` - Generate Mermaid diagrams for visualization
+
+### C++ Implementation (cpp/)
+
+The C++ version provides the same functionality with native performance:
+
+- **materialx_serializer.h/cpp**: Core conversion classes
+  - `MaterialXToProtobuf` - Converts MaterialX to Protobuf
+  - `ProtobufToMaterialX` - Converts Protobuf to MaterialX
+  - `Util` - Serialization, JSON export, and debug tools
+  - `VersionUpgrader` - Schema version management
+
+- **main.cpp**: Command-line interface matching the Python version
+
+See `cpp/README.md` for C++-specific details.
 
 ## Sample Files
 

@@ -5,13 +5,28 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>YES/materialx__serializer_8h_source.html</loc>
+  </url>
+  <url>
+    <loc>YES/main_8cpp.html</loc>
+  </url>
+  <url>
+    <loc>YES/materialx__serializer_8cpp.html</loc>
+  </url>
+  <url>
+    <loc>YES/materialx__serializer_8h.html</loc>
+  </url>
+  <url>
+    <loc>YES/cpp_2_r_e_a_d_m_e_8md.html</loc>
+  </url>
+  <url>
+    <loc>YES/_r_e_a_d_m_e_8md.html</loc>
+  </url>
+  <url>
     <loc>YES/opinon_8md.html</loc>
   </url>
   <url>
     <loc>YES/schema__example_8md.html</loc>
-  </url>
-  <url>
-    <loc>YES/_r_e_a_d_m_e_8md.html</loc>
   </url>
   <url>
     <loc>YES/build_2lib_2main_8py.html</loc>
@@ -35,13 +50,37 @@
     <loc>YES/test__materialx_8py.html</loc>
   </url>
   <url>
+    <loc>YES/md__d_1_2_work_2materialx_2materialxpb_2cpp_2_r_e_a_d_m_e.html</loc>
+  </url>
+  <url>
     <loc>YES/md_opinon.html</loc>
   </url>
   <url>
     <loc>YES/md_schema__example.html</loc>
   </url>
   <url>
+    <loc>YES/class_material_x_to_protobuf.html</loc>
+  </url>
+  <url>
+    <loc>YES/class_material_x_to_protobuf-members.html</loc>
+  </url>
+  <url>
+    <loc>YES/class_protobuf_to_material_x.html</loc>
+  </url>
+  <url>
+    <loc>YES/class_protobuf_to_material_x-members.html</loc>
+  </url>
+  <url>
+    <loc>YES/class_util.html</loc>
+  </url>
+  <url>
+    <loc>YES/class_util-members.html</loc>
+  </url>
+  <url>
     <loc>YES/class_version_upgrader.html</loc>
+  </url>
+  <url>
+    <loc>YES/class_version_upgrader-members.html</loc>
   </url>
   <url>
     <loc>YES/namespacemain.html</loc>
@@ -75,6 +114,9 @@
   </url>
   <url>
     <loc>YES/dir_4fef79e7177ba769987a8da36c892c5f.html</loc>
+  </url>
+  <url>
+    <loc>YES/dir_df511e5bd85cec96854b39d5e1c27aa8.html</loc>
   </url>
   <url>
     <loc>YES/dir_7a9c7094c62de71bbec4b12c7c975b93.html</loc>
@@ -176,6 +218,24 @@
     <loc>YES/functions.html</loc>
   </url>
   <url>
+    <loc>YES/functions.html</loc>
+  </url>
+  <url>
+    <loc>YES/functions.html</loc>
+  </url>
+  <url>
+    <loc>YES/functions.html</loc>
+  </url>
+  <url>
+    <loc>YES/functions_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/functions_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/functions_func.html</loc>
+  </url>
+  <url>
     <loc>YES/functions_func.html</loc>
   </url>
   <url>
@@ -195,5 +255,47 @@
   </url>
   <url>
     <loc>YES/files.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_func.html</loc>
+  </url>
+  <url>
+    <loc>YES/globals_vars.html</loc>
   </url>
 </urlset>

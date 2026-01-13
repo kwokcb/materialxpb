@@ -1,6 +1,6 @@
 ### Versioned Protobuf Schema for Shader Inputs
 
-<pre>
+```protobuf
 syntax = "proto3";
 
 package shading;
@@ -81,7 +81,7 @@ message ShaderNode {
 
   google.protobuf.Any extensions = 4;
 }
-</pre>
+```
 
 | Feature  | Example  | Purpose |  
 | :-: | :-: | :-: |

@@ -1,10 +1,17 @@
 var searchData=
 [
-  ['code_20from_20proto_20schema_0',['Generating Python Code from Proto Schema',['../index.html#autotoc_md14',1,'']]],
-  ['compare_5fmtlx_5fdocuments_1',['compare_mtlx_documents',['../namespacemain.html#a1d09f6316c4041ed8ecbc9cc7eeed877',1,'main']]],
-  ['components_2',['Core Components',['../index.html#autotoc_md20',1,'']]],
-  ['conversion_3',['Conversion',['../index.html#autotoc_md17',1,'MaterialX to Protobuf Conversion'],['../index.html#autotoc_md19',1,'Protobuf to MaterialX Conversion']]],
-  ['convert_4',['convert',['../classmaterialx__serializer_1_1_material_x_to_protobuf.html#ad1895427a00e4cc4e14186221ecc65be',1,'materialx_serializer.MaterialXToProtobuf.convert()'],['../classmaterialx__serializer_1_1_protobuf_to_material_x.html#af8a569ffa2fad7c5206da68f6906cbf5',1,'materialx_serializer.ProtobufToMaterialX.convert()'],['../classmaterialx__serializer_1_1_material_x_to_protobuf.html#ad1895427a00e4cc4e14186221ecc65be',1,'materialx_serializer.MaterialXToProtobuf.convert()'],['../classmaterialx__serializer_1_1_protobuf_to_material_x.html#af8a569ffa2fad7c5206da68f6906cbf5',1,'materialx_serializer.ProtobufToMaterialX.convert()']]],
-  ['converter_5',['MaterialX Protobuf Converter',['../index.html',1,'']]],
-  ['core_20components_6',['Core Components',['../index.html#autotoc_md20',1,'']]]
+  ['benefits_20of_20protocol_20buffer_20format_0',['Benefits of Protocol Buffer Format',['../index.html#autotoc_md34',1,'']]],
+  ['bindings_1',['Bindings',['../index.html#autotoc_md45',1,'C++ Bindings'],['../index.html#autotoc_md44',1,'Python Bindings']]],
+  ['blurb_2',['Blurb',['../md_opinon.html',1,'Brief Blurb'],['../md_opinon.html#autotoc_md30',1,'Detailed Blurb'],['../md_opinon.html#autotoc_md29',1,'Summary Blurb']]],
+  ['brief_20blurb_3',['Brief Blurb',['../md_opinon.html',1,'']]],
+  ['buffer_20format_4',['Benefits of Protocol Buffer Format',['../index.html#autotoc_md34',1,'']]],
+  ['buffer_20schema_5',['Protocol Buffer Schema',['../index.html#autotoc_md42',1,'']]],
+  ['buffers_6',['What is Protocol Buffers?',['../index.html#autotoc_md33',1,'']]],
+  ['build_7',['Manual CMake Build',['../md__d_1_2_work_2materialx_2materialxpb_2cpp_2_r_e_a_d_m_e.html#autotoc_md7',1,'']]],
+  ['build_20the_20executable_8',['Build the Executable',['../md__d_1_2_work_2materialx_2materialxpb_2cpp_2_r_e_a_d_m_e.html#autotoc_md6',1,'']]],
+  ['build_2flib_2fmain_2epy_9',['main.py',['../build_2lib_2main_8py.html',1,'']]],
+  ['build_2flib_2fmaterialx_5fpb2_2epy_10',['materialx_pb2.py',['../build_2lib_2materialx__pb2_8py.html',1,'']]],
+  ['build_2flib_2fmaterialx_5fserializer_2epy_11',['materialx_serializer.py',['../build_2lib_2materialx__serializer_8py.html',1,'']]],
+  ['building_12',['Building',['../md__d_1_2_work_2materialx_2materialxpb_2cpp_2_r_e_a_d_m_e.html#autotoc_md4',1,'']]],
+  ['building_20the_20c_20version_13',['Building the C++ Version',['../index.html#autotoc_md56',1,'']]]
 ];
