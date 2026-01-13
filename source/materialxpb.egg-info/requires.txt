@@ -1,4 +1,4 @@
-materialx>=1.39.5
+materialx>=1.39.4
 protobuf>=6.33.0
 
 [dev]

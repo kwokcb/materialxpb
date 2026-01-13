@@ -64,6 +64,28 @@ Install Protocol Buffers compiler:
    pip install MaterialX
    ```
 
+#### Python Tests
+
+Run tests with:
+```bash
+pytest tests/ [--verbose]
+```
+
+If you run with verbose output all tests should pass::
+```bash
+tests/test_materialx.py::test_file_exists[standard_surface_chess_set.json] PASSED                                [  3%]
+tests/test_materialx.py::test_file_exists[standard_surface_chess_set.mtlx] PASSED                                [  7%]
+tests/test_materialx.py::test_file_exists[standard_surface_chess_set.mxpb] PASSED                                [ 10%]
+tests/test_materialx.py::test_file_exists[standard_surface_chess_set_converted.mtlx] PASSED                      [ 14%]
+tests/test_materialx.py::test_file_exists[standard_surface_chess_set_from_pb.mtlx] PASSED                        [ 17%]
+tests/test_materialx.py::test_file_exists[unlit_cross.json] PASSED                                               [ 21%]
+...
+tests/test_materialx.py::test_mxpb_to_mtlx[standard_surface_chess_set.mxpb] PASSED                               [ 96%]
+tests/test_materialx.py::test_mxpb_to_mtlx[unlit_cross.mxpb] PASSED                                              [100%]
+
+================================================= 28 passed in 0.22s ==================================================
+```
+
 ### C++ Setup
 
 For the C++ version, you'll need:
